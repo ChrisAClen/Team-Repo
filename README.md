@@ -1,8 +1,8 @@
 # Team-Repo
 Repo for first team project
 
-## about the project
-Repo for the first Team-Project for Revature.
+## About the Project
+---Repo for the first Team-Project for Revature---(will be updated)
 
 ## technologies
 
