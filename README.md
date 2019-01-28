@@ -14,7 +14,7 @@ Repo for the first Team-Project for Revature.
 ## maintainers
 
 ![Christopher A Clendinen](https://avatars1.githubusercontent.com/u/45204662?s=64&v=4)
-![Edmond Thompson]()
+![Edmond Thompson](https://avatars2.githubusercontent.com/u/8095689?s=64&v=4)
 ![Narely Najera]()
 
 
