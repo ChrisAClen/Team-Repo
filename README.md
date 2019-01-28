@@ -9,7 +9,11 @@ Repo for first team project
 + HTML
 + CSS
 + JS
++ Bootstrap
++ MVC
 + C#
++ SQL
++ EF
 
 ## maintainers
 
