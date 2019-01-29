@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eMNY.Migration", "eMNY.Migr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eMNY.Code", "eMNY.Code\eMNY.Code.csproj", "{E1D58468-FDAA-4584-BD2F-CA736212B84A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eMNY.Client", "eMNY.Client\eMNY.Client.csproj", "{2921E3C5-95A5-4D3D-8F57-B8F10CBB4943}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{E1D58468-FDAA-4584-BD2F-CA736212B84A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1D58468-FDAA-4584-BD2F-CA736212B84A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1D58468-FDAA-4584-BD2F-CA736212B84A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2921E3C5-95A5-4D3D-8F57-B8F10CBB4943}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2921E3C5-95A5-4D3D-8F57-B8F10CBB4943}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2921E3C5-95A5-4D3D-8F57-B8F10CBB4943}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2921E3C5-95A5-4D3D-8F57-B8F10CBB4943}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
