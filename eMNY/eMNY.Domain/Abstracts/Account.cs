@@ -8,5 +8,8 @@ namespace eMNY.Domain.Abstracts
     public double Balance { get; set; }
     public bool IsChecking { get; set; }
     public DateTime CreationDate { get; set; }
+    public double InterestRate { get; set; }
+
+
   }
 }

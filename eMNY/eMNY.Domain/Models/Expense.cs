@@ -14,5 +14,6 @@ namespace eMNY.Domain.Models
     public double TargetBalance { get; set; }
     public double CurrentBalance { get; set; }
 
+
   }
 }
