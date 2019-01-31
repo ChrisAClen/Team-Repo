@@ -1,14 +1,15 @@
+using eMNY.Domain.Abstracts;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace eMNY.Domain.Models
 {
-  class Address
+  public class Address: AThing
   {
-    string StreetName { get; set; }
-    int Zipcode { get; set; }
-    string City { get; set; }
-    string State { get; set; }
+    public string StreetName { get; set; }
+    public int Zipcode { get; set; }
+    public string City { get; set; }
+    public string State { get; set; }
   }
 }
