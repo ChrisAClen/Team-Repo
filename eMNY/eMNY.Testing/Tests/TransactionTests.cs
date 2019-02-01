@@ -3,14 +3,16 @@ using Xunit;
 
 namespace eMNY.Testing.Tests
 {
-    public class TransactionTests
+  public class TransactionTests
+  {
+    private readonly Transactions sut;
+
+    public TransactionTests()
     {
-        public TransactionTests()
-        {
-            var sut = new Transaction
-            {
-                
-            };
-        }
+      sut = new Transactions
+      {
+
+      };
     }
+  }
 }
