@@ -7,7 +7,7 @@ namespace eMNY.Domain.Models
 {
   public class Name
   {
-    public string First;
-    public string Last;
+    public string First { get; set; }
+    public string Last { get; set; }
   }
 }
