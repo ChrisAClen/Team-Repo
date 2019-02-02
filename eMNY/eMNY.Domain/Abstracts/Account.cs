@@ -9,5 +9,6 @@ namespace eMNY.Domain.Abstracts
     public bool IsChecking { get; set; }
     public DateTime CreationDate { get; set; }
     public double InterestRate { get; set; }
+    public double Deposit { get; set; }
   }
 }
