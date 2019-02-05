@@ -14,9 +14,11 @@ namespace eMNY.Domain.Models
 
     public override bool IsValid()
     {
-      return Validator.ValidateString(this) &&
+      return 
+      Validator.ValidateString(this) &&
       Validator.ValidateNumber(this) &&
-      Name.IsValid();
+      Name.IsValid() &&
+      Card.IsValid();
     }
   }
 }
