@@ -6,7 +6,7 @@ using System.Text;
 
 namespace eMNY.Domain.Models
 {
-  public class Name
+  public class Name : AThing
   {
     public string First { get; set; }
     public string Last { get; set; }
@@ -15,6 +15,5 @@ namespace eMNY.Domain.Models
       return
       Validator.ValidateString(this);
     }
-    
   }
 }
