@@ -11,7 +11,7 @@ namespace eMNY.Testing.Tests
     {
       sut = new Customer()
       {
-        Name = "John Smith",
+        //Name = "John Smith",
         UserName = "JSmith123",
         Password = "aPassword",
         Email = "jsmith@email.com"

@@ -1,4 +1,6 @@
 using eMNY.Domain.Abstracts;
+using eMNY.Domain.Interfaces;
+
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,5 +15,12 @@ namespace eMNY.Domain.Models
     public DateTime TransactionDate { get; set; }
     public bool IsDeposit { get; set; }
 
+    public override bool IsValid()
+    {
+      return 
+      Validator.ValidateNumber(this) &&
+      Validator.ValidateMoney(this) &&
+      (TransactionDate != null);
+    }
   }
 }
