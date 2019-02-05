@@ -12,6 +12,13 @@ namespace eMNY.Domain.Models
     public int AccountId { get; set; }
     public Card Card { get; set; }
 
+    public Customer()
+    {
+      Name = new Name();
+      Card = new Card();
+    }
+
+
     public override bool IsValid()
     {
       return 
@@ -20,6 +27,9 @@ namespace eMNY.Domain.Models
       Name.IsValid() &&
       Card.IsValid();
     }
+
+
+
   }
 }
 
