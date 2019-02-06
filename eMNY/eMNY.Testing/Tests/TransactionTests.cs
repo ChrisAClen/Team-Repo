@@ -17,5 +17,13 @@ namespace eMNY.Testing.Tests
         TransactionDate = DateTime.Now
       };
     }
+
+    [Fact]
+    public void ExpenseTest()
+    {
+      Assert.IsType<bool>(sut.IsDeposit);
+      Assert.IsType<double>(sut.TransactionAmount);
+      Assert.IsType<DateTime>(sut.TransactionDate);
+    }
   }
 }
