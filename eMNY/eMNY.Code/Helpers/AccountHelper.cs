@@ -9,7 +9,7 @@ namespace eMNY.Code.Helpers
 {
   public class AccountHelper
   {
-    private eMNYDbContext _db = new eMNYDbContext();
+    private readonly eMNYDbContext _db = new eMNYDbContext();
 
     public bool SetSavingsAccount(SavingsAccount savings)
     {
