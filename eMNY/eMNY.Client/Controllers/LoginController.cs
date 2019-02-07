@@ -10,12 +10,12 @@ namespace eMNY.Client.Controllers
     {
         public IActionResult Login()
         {
-            return View();
+            return View("Login");
         }
 
         public IActionResult Register()
         {
-          return View();
+          return View("Register");
         }
   }
 }

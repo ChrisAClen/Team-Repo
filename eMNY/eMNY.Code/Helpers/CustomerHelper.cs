@@ -8,7 +8,7 @@ namespace eMNY.Code.Helpers
 {
   public class CustomerHelper
   {
-    private eMNYDbContext _db = new eMNYDbContext();
+    private readonly eMNYDbContext _db = new eMNYDbContext();
 
     public bool SetUser(Customer user)
     {
