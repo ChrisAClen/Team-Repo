@@ -14,6 +14,7 @@ namespace eMNY.Client.Models
     public List<Transactions> Transactions { get; set; }
     public List<Account> Accounts { get; set; }
     public Card Card { get; set; }
+    public Name Name { get; set; }
 
     [Required(ErrorMessage = "A User must be Inputted!")]
     public string UserName { get; set; }
