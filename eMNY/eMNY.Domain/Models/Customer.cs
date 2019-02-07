@@ -22,10 +22,8 @@ namespace eMNY.Domain.Models
       Card = new Card();
       Transactions = new List<Transactions>();
       Accounts = new List<Account>();
-
     }
-
-
+    
     public override bool IsValid()
     {
       return 
@@ -34,9 +32,7 @@ namespace eMNY.Domain.Models
       Name.IsValid() &&
       Card.IsValid();
     }
-
-
-
+    
   }
 }
 
