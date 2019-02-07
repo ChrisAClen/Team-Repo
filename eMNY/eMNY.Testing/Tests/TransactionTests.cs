@@ -13,16 +13,16 @@ namespace eMNY.Testing.Tests
       sut = new Transactions
       {
         IsDeposit = true,
-        TransactionAmount = 500d,
+        TransactionAmount = 500m,
         TransactionDate = DateTime.Now
       };
     }
 
     [Fact]
-    public void ExpenseTest()
+    public void TransactionTest()
     {
       Assert.IsType<bool>(sut.IsDeposit);
-      Assert.IsType<double>(sut.TransactionAmount);
+      Assert.IsType<decimal>(sut.TransactionAmount);
       Assert.IsType<DateTime>(sut.TransactionDate);
     }
   }
