@@ -12,8 +12,8 @@ namespace eMNY.Domain.Models
     public int AccountId { get; set; }
 
     public string ExpenseName { get; set; }
-    public double TargetBalance { get; set; }
-    public double CurrentBalance { get; set; }
+    public decimal TargetBalance { get; set; }
+    public decimal CurrentBalance { get; set; }
 
     public override bool IsValid()
     {
