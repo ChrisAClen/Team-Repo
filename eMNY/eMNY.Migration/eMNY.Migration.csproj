@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\eMNY.Domain\eMNY.Domain.csproj" />
+    <ProjectReference Include="..\eMNY.Code\eMNY.Code.csproj" />
   </ItemGroup>
 
 </Project>
