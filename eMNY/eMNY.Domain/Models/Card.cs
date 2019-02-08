@@ -1,6 +1,7 @@
 using eMNY.Domain.Abstracts;
 using eMNY.Domain.Interfaces;
 using System;
+using System.Collections.Generic;
 
 namespace eMNY.Domain.Models
 {
@@ -8,7 +9,7 @@ namespace eMNY.Domain.Models
   {
     public long CardNumber { get; set; }
     public int SecurityNumber { get; set; }
-    public Account Account { get; set; }
+    public List<Account> Account { get; set; }
     public int Pin { get; set; }
     public DateTime ExpirationDate { get; set; }
 
@@ -16,7 +17,7 @@ namespace eMNY.Domain.Models
     {
       return 
       Validator.ValidateNumber(this) &&
-      Account.IsValid() &&
+      (Account != null) &&
       (ExpirationDate != null);
 
     }

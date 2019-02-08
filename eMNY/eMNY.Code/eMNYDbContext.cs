@@ -16,6 +16,7 @@ namespace eMNY.Code
     public DbSet<SavingsAccount> SavingsAccounts { get; set; }
     public DbSet<Card> Cards { get; set; }
     public DbSet<Name> Names { get; set; }
+    public DbSet<Address> Addresses { get; set; }
 
 
     protected override void OnConfiguring(DbContextOptionsBuilder builder)
@@ -32,6 +33,7 @@ namespace eMNY.Code
       builder.Entity<SavingsAccount>().HasKey(e => e.Id);
       builder.Entity<Card>().HasKey(e => e.Id);
       builder.Entity<Name>().HasKey(e => e.Id);
+      builder.Entity<Address>().HasKey(e => e.Id);
 
     }
   }

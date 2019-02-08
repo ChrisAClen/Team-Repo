@@ -14,6 +14,10 @@ namespace eMNY.Domain.Models
     public string ExpenseName { get; set; }
     public double TargetBalance { get; set; }
     public double CurrentBalance { get; set; }
+    public DateTime StartDate { get; set; }
+    public DateTime TargetDate { get; set; }
+
+
 
     public override bool IsValid()
     {
