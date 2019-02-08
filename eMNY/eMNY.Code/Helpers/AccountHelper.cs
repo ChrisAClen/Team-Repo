@@ -22,7 +22,7 @@ namespace eMNY.Code.Helpers
       var account = _db.SavingsAccounts.FromSql("select * from users");
       var query = (from s in _db.SavingsAccounts
                    select s).ToList();
-      return _db.SavingsAccounts.Include(m => m.AccountNumber).ToList(); //lazy loading
+      return _db.SavingsAccounts.Include(m => m.SavingsId).ToList(); //lazy loading
     }
 
     public bool SetCheckingAccount(CheckingAccount checking)
@@ -36,7 +36,7 @@ namespace eMNY.Code.Helpers
       var account = _db.CheckingAccounts.FromSql("select * from users");
       var query = (from c in _db.CheckingAccounts
                    select c).ToList();
-      return _db.CheckingAccounts.Include(m => m.AccountNumber).ToList(); //lazy loading
+      return _db.CheckingAccounts.Include(m => m.CheckingId).ToList(); //lazy loading
     }
   }
 }

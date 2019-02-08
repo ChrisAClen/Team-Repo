@@ -1,9 +1,10 @@
+using eMNY.Domain.Interfaces;
 using System;
 using System.Transactions;
 
 namespace eMNY.Domain.Abstracts
 {
-  public abstract class Account
+  public abstract class Account : IAccount
   {
     public int Id { get; set; }
     public int AccountNumber { get; set; }
