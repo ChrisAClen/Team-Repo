@@ -13,8 +13,8 @@ namespace eMNY.Testing.Tests
       sut = new Expense()
       {
         ExpenseName = "Rent",
-        TargetBalance = (double)1000m,
-        CurrentBalance = (double)500m
+        TargetBalance = 1000m,
+        CurrentBalance = 500m
       };
     }
 
@@ -22,8 +22,8 @@ namespace eMNY.Testing.Tests
     public void ExpenseTest()
     {
       Assert.IsType<string>(sut.ExpenseName);
-      Assert.IsType<double>(sut.TargetBalance);
-      Assert.IsType<double>(sut.CurrentBalance);
+      Assert.IsType<decimal>(sut.TargetBalance);
+      Assert.IsType<decimal>(sut.CurrentBalance);
     }
   }
 }
