@@ -10,22 +10,22 @@ namespace eMNY.Client.Controllers
     {
         public IActionResult Account()
         {
-            return View();
+            return View("Account");
         }
 
         public IActionResult Budget()
         {
-          return View();
+          return View("Budget");
         }
 
         public IActionResult History()
         {
-          return View();
+          return View("History");
         }
 
         public IActionResult Transactions()
         {
-          return View();
+          return View("Transaction");
         }
   }
 }
