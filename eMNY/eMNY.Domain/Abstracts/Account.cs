@@ -41,5 +41,15 @@ namespace eMNY.Domain.Abstracts
        Balance += amount;
        return true;
      }
+
+    public void CreateAccountNumber()
+    {
+      Random rnd = new Random();
+      int lead = 711;
+      int RandNumb1 = rnd.Next(0000000, 9999999);
+
+      AccountNumber = int.Parse(lead.ToString() + RandNumb1.ToString());
+
+    }
   }
 }
