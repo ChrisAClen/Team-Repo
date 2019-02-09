@@ -6,6 +6,8 @@ namespace eMNY.Testing.Tests
   public class CustomerTests
   {
     private readonly Customer sut;
+    private readonly Address sua;
+    private readonly Card suc;
 
     public CustomerTests()
     {
@@ -14,10 +16,13 @@ namespace eMNY.Testing.Tests
         Name = new Name() { First = "John", Last = "Smith" },
         UserName = "JSmith123",
         Password = "aPassword",
-        Email = "jsmith@email.com"
+        Email = "jsmith@email.com",
+        Address = new Address(),
+        Card = new Card()
+
       };
 
-      Address = new Address()
+      sua = new Address()
       {
         Street = "3230 Banyan Cir",
         City = "Tampa",
@@ -25,7 +30,7 @@ namespace eMNY.Testing.Tests
         PostalCode = "33613"
       };
 
-      Card = new Card()
+      suc = new Card()
       {
         CardNumber = 1234123412341234,
         SecurityNumber = 123,
@@ -44,14 +49,14 @@ namespace eMNY.Testing.Tests
       Assert.IsType<string>(sut.Password);
       Assert.IsType<string>(sut.Email);
       Assert.IsType<Address>(sut.Address);
-      Assert.IsType<string>(sut.Street);
-      Assert.IsType<string>(sut.City);
-      Assert.IsType<string>(sut.StateProvince);
-      Assert.IsType<string>(sut.PostalCode);
+      Assert.IsType<string>(sua.Street);
+      Assert.IsType<string>(sua.City);
+      Assert.IsType<string>(sua.StateProvince);
+      Assert.IsType<string>(sua.PostalCode);
       Assert.IsType<Card>(sut.Card);
-      Assert.IsType<long>(sut.CardNumber);
-      Assert.IsType<int>(sut.SecurityNumber);
-      Assert.Isype<int>(sut.Pin);
+      Assert.IsType<long>(suc.CardNumber);
+      Assert.IsType<int>(suc.SecurityNumber);
+      Assert.IsType<int>(suc.Pin);
     }
   }
 }
