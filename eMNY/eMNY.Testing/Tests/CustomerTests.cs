@@ -6,23 +6,17 @@ namespace eMNY.Testing.Tests
   public class CustomerTests
   {
     private readonly Customer sut;
-    private readonly Address sua;
-    private readonly Card suc;
+    public Name Name { get; set; }
+    public Address Address { get; set; }
+    public Card Card { get; set; }
 
     public CustomerTests()
     {
-      sut = new Customer()
-      {
-        Name = new Name() { First = "John", Last = "Smith" },
-        UserName = "JSmith123",
-        Password = "aPassword",
-        Email = "jsmith@email.com",
-        Address = new Address(),
-        Card = new Card()
 
-      };
+      Name = new Name()
+      { First = "John", Last = "Smith" };
 
-      sua = new Address()
+      Address = new Address()
       {
         Street = "3230 Banyan Cir",
         City = "Tampa",
@@ -30,13 +24,22 @@ namespace eMNY.Testing.Tests
         PostalCode = "33613"
       };
 
-      suc = new Card()
+      Card = new Card()
       {
         CardNumber = 1234123412341234,
         SecurityNumber = 123,
         Pin = 1234
-        //ExpirationDate = 
 
+      };
+
+      sut = new Customer()
+      {
+        Name = Name,
+        Address = Address,
+        Card = Card,
+        UserName = "JSmith123",
+        Password = "aPassword",
+        Email = "jsmith@email.com",
       };
 
     }
@@ -49,14 +52,14 @@ namespace eMNY.Testing.Tests
       Assert.IsType<string>(sut.Password);
       Assert.IsType<string>(sut.Email);
       Assert.IsType<Address>(sut.Address);
-      Assert.IsType<string>(sua.Street);
-      Assert.IsType<string>(sua.City);
-      Assert.IsType<string>(sua.StateProvince);
-      Assert.IsType<string>(sua.PostalCode);
+      Assert.IsType<string>(Address.Street);
+      Assert.IsType<string>(Address.City);
+      Assert.IsType<string>(Address.StateProvince);
+      Assert.IsType<string>(Address.PostalCode);
       Assert.IsType<Card>(sut.Card);
-      Assert.IsType<long>(suc.CardNumber);
-      Assert.IsType<int>(suc.SecurityNumber);
-      Assert.IsType<int>(suc.Pin);
+      Assert.IsType<long>(Card.CardNumber);
+      Assert.IsType<int>(Card.SecurityNumber);
+      Assert.IsType<int>(Card.Pin);
     }
   }
 }
