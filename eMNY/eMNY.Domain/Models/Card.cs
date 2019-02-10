@@ -21,17 +21,18 @@ namespace eMNY.Domain.Models
       (ExpirationDate != null);
     }
 
-    public void CreateCardNumber()
+    public long CreateCardNumber()
     {
       Random rnd = new Random();
       int lead = 1738;
-      int RandNumb1 = rnd.Next(0000, 9999);
-      int RandNumb2 = rnd.Next(0000, 9999);
-      int RandNumb3 = rnd.Next(0000, 9999);
-      int RandNumb4 = rnd.Next(000);
+      int RandNumb1 = rnd.Next(100000, 999999);
+      int RandNumb2 = rnd.Next(100000, 999999);
+      int RandNumb3 = rnd.Next(100);
 
-      CardNumber = long.Parse(lead.ToString() + RandNumb1.ToString() + RandNumb2.ToString() + RandNumb3.ToString());
-      SecurityNumber = int.Parse(RandNumb4.ToString());
+      CardNumber = long.Parse(lead.ToString() + RandNumb1.ToString() + RandNumb2.ToString());
+      SecurityNumber = int.Parse(RandNumb3.ToString());
+
+      return (CardNumber);
     }
   }
 }

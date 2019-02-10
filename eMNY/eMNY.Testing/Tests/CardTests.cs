@@ -14,12 +14,15 @@ namespace eMNY.Testing.Tests
     {
       sut = new Card()
       {
-
-        ExpirationDate = DateTime.Now,
-        CardNumber = 1738999900001111,
-        Pin = 0123,
-        SecurityNumber = 345
+       
       };
+    }
+
+    [Fact]
+    public void CardTest()
+    {
+      long newCard = sut.CreateCardNumber();
+      Assert.True(newCard.ToString().Length == 16);
     }
 
   }
