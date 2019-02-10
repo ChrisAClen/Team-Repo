@@ -1,3 +1,4 @@
+@using Microsoft.IdentityModel.Tokens
 @model eMNY.Client.Models.CustomerViewModel
 @{
   Layout = "~/Views/Shared/_Layout.cshtml";
@@ -7,20 +8,51 @@
 }
 
 
-<div class="text-center">
-  <h1 class="display-4">Login</h1>
-  @using (Html.BeginForm("Login","Login"))
+<div class="box">
+  
+@*<h1 class="display-4">Login</h1>
+  
+  @using (Html.BeginForm("Login", "Login"))
   {
-    @Html.LabelFor(u => u.UserName, "Enter your new username: ")
-    @Html.TextBoxFor(u => u.UserName)
-    @Html.ValidationMessageFor(u => u.UserName)
-    <br />
+    <div class="field">
+      @Html.LabelFor(u => u.UserName, "Enter your username: ")
+      <div class="control">
+        @Html.TextBoxFor(u => u.UserName)
+      </div>
+      @Html.ValidationMessageFor(u => u.UserName)
+    </div>
+    <br/>
 
-    @Html.LabelFor(u => u.Password, "Enter your Password: ")
-    @Html.TextBoxFor(u => u.Password)
-    @Html.ValidationMessageFor(u => u.Password)
-    <br />
-   
-    <button type="submit">Submit</button>
+    <div class="field">
+      @Html.LabelFor(u => u.Password, "Enter your Password: ")
+      <div class="control">
+        @Html.TextBoxFor(u => u.Password)
+      </div>
+      @Html.ValidationMessageFor(u => u.Password)
+    </div>
+    <br/>
+      
+    <div class="control">
+      <button type="submit">Submit</button>
+    </div>*@
+<div class="box">
+  @using (Html.BeginForm("Login", "Login"))
+  {
+    <div class="field">
+      @Html.LabelFor(u => u.UserName, "Enter your username: ")
+      <div class="control">
+        @Html.TextBoxFor(u => u.UserName, new { @class ="input is-large" })
+      </div>
+        @Html.ValidationMessageFor(u => u.UserName)
+    </div> /*end username*/
+    
+    <div class="field">
+      @Html.LabelFor(u => u.Password, "Enter your Password: ")
+      <div class="control">
+        @Html.TextBoxFor(u => u.Password, new { @class ="input is-large" })
+      </div>
+      @Html.ValidationMessageFor(u => u.Password)
+    </div> /*end password*/
+    <button class="button is-block is-info is-large is-fullwidth">Login</button>
   }
 </div>
