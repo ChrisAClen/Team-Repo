@@ -14,7 +14,9 @@ namespace eMNY.Testing.Tests
       {
         ExpenseName = "Rent",
         TargetBalance = 1000m,
-        CurrentBalance = 500m
+        CurrentBalance = 500m,
+        StartDate = DateTime.Now,
+        TargetDate = DateTime.Now
       };
     }
 
@@ -24,6 +26,8 @@ namespace eMNY.Testing.Tests
       Assert.IsType<string>(sut.ExpenseName);
       Assert.IsType<decimal>(sut.TargetBalance);
       Assert.IsType<decimal>(sut.CurrentBalance);
+      Assert.IsType<DateTime>(sut.StartDate);
+      Assert.IsType<DateTime>(sut.TargetDate);
     }
   }
 }
