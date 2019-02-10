@@ -19,10 +19,12 @@ namespace eMNY.Domain.Abstracts
       return this.Id > 0;
     }
 
-     protected Account(decimal Amount)
+     protected Account(decimal amt)
      {
-       if(Amount < 0)
-         throw new ArgumentOutOfRangeException("Your balance must be more than $0");
+      if (amt < 0)
+        throw new ArgumentOutOfRangeException("amt", "Your balance must be more than $0");
+      else
+        Amount = amt;
      }
 
     public decimal Withdraw()
