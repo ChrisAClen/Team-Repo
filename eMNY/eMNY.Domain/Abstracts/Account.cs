@@ -19,31 +19,38 @@ namespace eMNY.Domain.Abstracts
       return this.Id > 0;
     }
 
-     public Account(decimal Balance)
+     protected Account(decimal amt)
      {
-       if(Balance < 0)
-         throw new ArgumentOutOfRangeException("Your balance must be more than $0");
-       Account.Balance = Balance;
+      if (amt < 0)
+        throw new ArgumentOutOfRangeException("amt", "Your balance must be more than $0");
+      else
+        Amount = amt;
      }
 
-     public bool Withdraw(decimal amount)
-     {
-       if (amount <= 0 || Balance - amount < 0)
-         return false;
-       Balance -= amount;
-       return true;
-     }
+    public decimal Withdraw()
+    {
+      if (Amount <= 0 || Balance > 0)
+        return Amount;
+      Balance -= Amount;
+      return Balance;
+    }
 
-     public bool Deposit(decimal amount)
-     {
-       if (amount <= 0)
-         return false;
-       Balance += amount;
-       return true;
-     }
+    public decimal Deposit()
+    {
+      if (Amount <= 0)
+        return Amount;
+      Balance += Amount;
+      return Balance;
+    }
 
+    public void CreateAccountNumber()
+    {
+      Random rnd = new Random();
+      int lead = 711;
+      int RandNumb1 = rnd.Next(0000000, 9999999);
+
+      AccountNumber = int.Parse(lead.ToString() + RandNumb1.ToString());
       
-
-      //make logic for acct number randomizer generation
+    }
   }
 }
