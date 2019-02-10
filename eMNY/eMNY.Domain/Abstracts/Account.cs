@@ -19,27 +19,20 @@ namespace eMNY.Domain.Abstracts
       return this.Id > 0;
     }
 
-     public Account(decimal Balance)
+       public decimal Withdraw()
      {
-       if(Balance < 0)
-         throw new ArgumentOutOfRangeException("Your balance must be more than $0");
-       Account.Balance = Balance;
+       if (Amount <= 0 || Balance > 0)
+         return Amount;
+       Balance -= Amount;
+       return Balance;
      }
 
-     public bool Withdraw(decimal amount)
+     public decimal Deposit()
      {
-       if (amount <= 0 || Balance - amount < 0)
-         return false;
-       Balance -= amount;
-       return true;
-     }
-
-     public bool Deposit(decimal amount)
-     {
-       if (amount <= 0)
-         return false;
-       Balance += amount;
-       return true;
+       if (Amount <= 0)
+         return Amount;
+       Balance += Amount;
+       return Balance;
      }
 
     public void CreateAccountNumber()
