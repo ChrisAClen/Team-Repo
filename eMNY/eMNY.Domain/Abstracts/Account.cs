@@ -49,7 +49,7 @@ namespace eMNY.Domain.Abstracts
       int RandNumb1 = rnd.Next(0000000, 9999999);
 
       AccountNumber = int.Parse(lead.ToString() + RandNumb1.ToString());
-
+      
     }
   }
 }
