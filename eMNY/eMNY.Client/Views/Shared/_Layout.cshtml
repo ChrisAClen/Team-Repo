@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="~/css/layout.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
+
 <body>
   <section class="hero is-info is-medium is-bold">
     <div class="hero-head">
@@ -30,8 +31,7 @@
               <div class="navbar-end">
                 <div class="tabs is-right">
                   <ul>
-                    <li class="is-active"><a asp-controller="Home
-" asp-action="Index">Home</a></li>
+                    <li class="is-active"><a asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a href="">About</a></li>
                     <li><a href="">Contact</a></li>
                     <li><a asp-controller="Login" asp-action="Login">Login</a></li>
@@ -43,7 +43,7 @@
           </div>
       </nav>
   </div>
-  <div class="hero-body">
+  @*<div class="hero-body">
       <div class="container has-text-centered">
           <h1 class="title">
           The new standard in Internet Banking
@@ -102,19 +102,19 @@
       </div>
     </div>
   </div>
-  </div>
   
-</section>
+
+</section>*@
   
   
 <div class="container">
     @RenderBody()
   </div>
-</section>
-  <footer class="footer">
+
+<footer class="footer">
     <div class="content has-text-centered">
       <p>
-        <strong>MNY</strong> is created and maintained by Edmond Thompson, Narely Najera & Christopher Clendinen.
+        <strong>eMNY</strong> is created and maintained by Edmond Thompson, Narely Najera & Christopher Clendinen.
       </p>
       <p>Project licensed under
         <a href=" https://github.com/ChrisAClen/Team-Repo/blob/master/LICENSE">Apache License 2.0</a>.
