@@ -43,14 +43,14 @@ namespace eMNY.Domain.Abstracts
       return Balance;
     }
 
-    public void CreateAccountNumber()
+    public int CreateAccountNumber()
     {
       Random rnd = new Random();
       int lead = 711;
       int RandNumb1 = rnd.Next(0000000, 9999999);
 
       AccountNumber = int.Parse(lead.ToString() + RandNumb1.ToString());
-      
+      return AccountNumber;
     }
   }
 }

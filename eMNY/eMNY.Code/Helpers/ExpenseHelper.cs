@@ -19,7 +19,7 @@ namespace eMNY.Code.Helpers
 
     public List<Expense> GetExpenses()
     {
-      var exp = _db.Expenses.FromSql("select * from users");
+      var exp = _db.Expenses.FromSql("select * from expenses");
       var query = (from s in _db.Expenses
                    select s).ToList();
       return _db.Expenses.Include(m => m.TargetBalance).ToList(); //lazy loading

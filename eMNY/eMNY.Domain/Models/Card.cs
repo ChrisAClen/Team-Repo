@@ -13,6 +13,8 @@ namespace eMNY.Domain.Models
     public int Pin { get; set; }
     public DateTime ExpirationDate { get; set; }
 
+    public Random rnd;
+
     public override bool IsValid()
     {
       return 
@@ -23,16 +25,25 @@ namespace eMNY.Domain.Models
 
     public long CreateCardNumber()
     {
-      Random rnd = new Random();
+      rnd = new Random();
       int lead = 1738;
       int RandNumb1 = rnd.Next(100000, 999999);
       int RandNumb2 = rnd.Next(100000, 999999);
-      int RandNumb3 = rnd.Next(100);
 
       CardNumber = long.Parse(lead.ToString() + RandNumb1.ToString() + RandNumb2.ToString());
-      SecurityNumber = int.Parse(RandNumb3.ToString());
+      
 
-      return (CardNumber);
+      return CardNumber;
     }
+
+    public int CreateSecurityNumber()
+    {
+      rnd = new Random();
+      int RandNumb = rnd.Next(100);
+      SecurityNumber = int.Parse(RandNumb.ToString());
+      return SecurityNumber;
+    }
+
+
   }
 }

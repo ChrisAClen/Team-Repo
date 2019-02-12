@@ -18,7 +18,7 @@ namespace eMNY.Code.Helpers
 
     public List<Customer> GetUsers()
     {
-      var users = _db.Customers.FromSql("select * from users");
+      var users = _db.Customers.FromSql("select * from customers");
       var query = (from u in _db.Customers
                    select u).ToList();
       return _db.Customers.Include(m => m.Name).ToList(); //lazy loading

@@ -19,7 +19,7 @@ namespace eMNY.Code.Helpers
 
     public List<SavingsAccount> GetSavings()
     {
-      var account = _db.SavingsAccounts.FromSql("select * from users");
+      var account = _db.SavingsAccounts.FromSql("select * from accounts");
       var query = (from s in _db.SavingsAccounts
                    select s).ToList();
       return _db.SavingsAccounts.Include(m => m.SavingsId).ToList(); //lazy loading

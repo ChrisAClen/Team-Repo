@@ -10,10 +10,8 @@ namespace eMNY.Testing.Tests
 
     public TransactionTests()
     {
-      sut = new Transactions
+      sut = new Transactions(500m, true)
       {
-        IsDeposit = true,
-        TransactionAmount = 500m,
         TransactionDate = DateTime.Now
       };
     }
