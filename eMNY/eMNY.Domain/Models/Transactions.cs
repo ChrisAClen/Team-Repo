@@ -16,10 +16,11 @@ namespace eMNY.Domain.Models
 
     public bool IsDeposit { get; set; }
 
-    public Transactions(decimal amount)
+    public Transactions(decimal amount, bool type)
     {
       TransactionDate = DateTime.Now;
       TransactionAmount = amount;
+      IsDeposit = type;
       
       if(IsDeposit == true)
       {
