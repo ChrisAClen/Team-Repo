@@ -23,6 +23,6 @@ namespace eMNY.Domain.Models
       (TransactionDate != null);
     }
 
-       
+      
   }
 }

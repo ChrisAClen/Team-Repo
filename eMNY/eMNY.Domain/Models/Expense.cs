@@ -17,14 +17,17 @@ namespace eMNY.Domain.Models
     public DateTime StartDate { get; set; }
     public DateTime TargetDate { get; set; }
 
-
-
-
     public override bool IsValid()
     {
       return
       Validator.ValidateNumber(this) &&
       Validator.ValidateMoney(this);
+    }
+
+    public decimal StartBudget()
+    {
+
+      return TargetBalance;
     }
   }
 }
