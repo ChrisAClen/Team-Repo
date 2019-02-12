@@ -13,7 +13,23 @@ namespace eMNY.Domain.Models
     public int AccountId { get; set; }
     public decimal TransactionAmount { get; set; }
     public DateTime TransactionDate { get; set; }
+
     public bool IsDeposit { get; set; }
+
+    public Transactions(decimal amount)
+    {
+      TransactionDate = DateTime.Now;
+      TransactionAmount = amount;
+      
+      if(IsDeposit == true)
+      {
+        
+      }
+      else
+      {
+
+      }
+    }
 
     public override bool IsValid()
     {
@@ -23,6 +39,10 @@ namespace eMNY.Domain.Models
       (TransactionDate != null);
     }
 
+    public void MakeTransaction()
+    {
+
+    }
       
   }
 }
