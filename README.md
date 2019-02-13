@@ -1,5 +1,5 @@
 # Team-Repo
-Repo for first team project
+Repo for eMNY e-Banking App
 
 ## About the Project
 MNY is a new kind of bank, allowing members to take control of their finances and get ahead by making money management easy and intuitive.
@@ -15,10 +15,11 @@ Ultimately, the goal of this app is to make the banking process easier and faste
 + CSS
 + JS
 + Bootstrap
++ Bulma
 + MVC
 + C#
 + SQL
-+ EF
++ EF Migrations
 
 ## maintainers
 
@@ -32,4 +33,4 @@ Ultimately, the goal of this app is to make the banking process easier and faste
 available under the [MIT License](https://github.com/ChrisAClen/Team-Repo/blob/master/LICENSE)
 
 
-[![Build status](https://dev.azure.com/chrisaclendinen/devops-today/_apis/build/status/devops-today-CI%20(1))](https://dev.azure.com/chrisaclendinen/devops-today/_build/latest?definitionId=11)
+[![Build status](https://dev.azure.com/chrisaclendinen/eMNY/_apis/build/status/eMNY%20PipeLine)](https://dev.azure.com/chrisaclendinen/eMNY/_build/latest?definitionId=13)
