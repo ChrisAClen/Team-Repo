@@ -23,6 +23,7 @@ namespace eMNY.Domain.Models
       else
         Amount = amt;
     }
+
     public override bool IsValid()
     {
       return

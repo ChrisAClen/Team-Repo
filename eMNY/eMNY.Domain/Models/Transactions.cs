@@ -21,10 +21,10 @@ namespace eMNY.Domain.Models
       TransactionDate = DateTime.Now;
       TransactionAmount = amount;
       IsDeposit = type;
-      
-      if(IsDeposit == true)
+
+      if (IsDeposit == true)
       {
-        
+
       }
       else
       {

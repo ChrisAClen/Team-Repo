@@ -4,8 +4,8 @@ using eMNY.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using eMNY.Domain.Abstracts;
 using Microsoft.Extensions.Configuration;
+using System.Configuration;
 
 namespace eMNY.Code
 {
@@ -34,8 +34,6 @@ namespace eMNY.Code
       builder.Entity<Name>().HasKey(e => e.Id);
       builder.Entity<Address>().HasKey(e => e.Id);
       builder.Entity<Account>().HasKey(e => e.Id);
-
-
 
     }
   }

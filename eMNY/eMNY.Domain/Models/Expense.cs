@@ -8,7 +8,7 @@ namespace eMNY.Domain.Models
 {
   public class Expense: AThing
   {
-    public int UserId { get; set; }
+    public int CustomerId { get; set; }
     public int AccountId { get; set; }
 
     public string ExpenseName { get; set; }
