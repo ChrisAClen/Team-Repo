@@ -10,6 +10,7 @@ namespace eMNY.Client.Controllers
     {
         public IActionResult Account()
         {
+
             return View("Account");
         }
 
