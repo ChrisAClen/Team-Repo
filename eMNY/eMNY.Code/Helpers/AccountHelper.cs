@@ -11,32 +11,20 @@ namespace eMNY.Code.Helpers
   {
     private readonly eMNYDbContext _db = new eMNYDbContext();
 
-    public bool SetSavingsAccount(SavingsAccount savings)
+    public bool SetAccount(Account savings)
     {
-      _db.SavingsAccounts.Add(savings);
+      _db.Accounts.Add(savings);
       return _db.SaveChanges() > 0;
     }
 
-    public List<SavingsAccount> GetSavings()
+    public List<Account> GetAccount()
     {
-      var account = _db.SavingsAccounts.FromSql("select * from accounts");
-      var query = (from s in _db.SavingsAccounts
+      var account = _db.Accounts.FromSql("select * from accounts");
+      var query = (from s in _db.Accounts
                    select s).ToList();
-      return _db.SavingsAccounts.Include(m => m.SavingsId).ToList(); //lazy loading
+      return _db.Accounts.Include(m => m.AccountNumber).ToList(); //lazy loading
     }
 
-    public bool SetCheckingAccount(CheckingAccount checking)
-    {
-      _db.CheckingAccounts.Add(checking);
-      return _db.SaveChanges() > 0;
-    }
-
-    public List<CheckingAccount> GetChecking()
-    {
-      var account = _db.CheckingAccounts.FromSql("select * from users");
-      var query = (from c in _db.CheckingAccounts
-                   select c).ToList();
-      return _db.CheckingAccounts.Include(m => m.CheckingId).ToList(); //lazy loading
-    }
+    
   }
 }

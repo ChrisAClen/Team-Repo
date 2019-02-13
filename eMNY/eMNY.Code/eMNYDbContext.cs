@@ -4,8 +4,8 @@ using eMNY.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using eMNY.Domain.Abstracts;
 using Microsoft.Extensions.Configuration;
+using System.Configuration;
 
 namespace eMNY.Code
 {
@@ -17,8 +17,7 @@ namespace eMNY.Code
     public DbSet<Card> Cards { get; set; }
     public DbSet<Name> Names { get; set; }
     public DbSet<Address> Addresses { get; set; }
-    public DbSet<SavingsAccount> SavingsAccounts { get; set; }
-    public DbSet<CheckingAccount> CheckingAccounts { get; set; }
+    public DbSet<Account> Accounts { get; set; }
     public IConfiguration Configuration { get; private set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder builder)
@@ -35,8 +34,6 @@ namespace eMNY.Code
       builder.Entity<Name>().HasKey(e => e.Id);
       builder.Entity<Address>().HasKey(e => e.Id);
       builder.Entity<Account>().HasKey(e => e.Id);
-
-
 
     }
   }

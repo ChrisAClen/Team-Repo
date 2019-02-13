@@ -41,25 +41,6 @@ namespace eMNY.Code.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Expenses",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    UserId = table.Column<int>(nullable: false),
-                    AccountId = table.Column<int>(nullable: false),
-                    ExpenseName = table.Column<string>(nullable: true),
-                    TargetBalance = table.Column<double>(nullable: false),
-                    CurrentBalance = table.Column<double>(nullable: false),
-                    StartDate = table.Column<DateTime>(nullable: false),
-                    TargetDate = table.Column<DateTime>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Expenses", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Names",
                 columns: table => new
                 {
@@ -111,34 +92,30 @@ namespace eMNY.Code.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Account",
+                name: "Accounts",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     AccountNumber = table.Column<int>(nullable: false),
-                    Balance = table.Column<double>(nullable: false),
                     IsChecking = table.Column<bool>(nullable: false),
                     CreationDate = table.Column<DateTime>(nullable: false),
-                    InterestRate = table.Column<double>(nullable: false),
-                    Deposit = table.Column<double>(nullable: false),
+                    InterestRate = table.Column<decimal>(nullable: false),
+                    Amount = table.Column<decimal>(nullable: false),
                     CardId = table.Column<int>(nullable: true),
-                    CustomerId = table.Column<int>(nullable: true),
-                    Discriminator = table.Column<string>(nullable: false),
-                    CheckingId = table.Column<double>(nullable: true),
-                    SavingsId = table.Column<double>(nullable: true)
+                    CustomerId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Account", x => x.Id);
+                    table.PrimaryKey("PK_Accounts", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Account_Cards_CardId",
+                        name: "FK_Accounts_Cards_CardId",
                         column: x => x.CardId,
                         principalTable: "Cards",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Account_Customers_CustomerId",
+                        name: "FK_Accounts_Customers_CustomerId",
                         column: x => x.CustomerId,
                         principalTable: "Customers",
                         principalColumn: "Id",
@@ -153,7 +130,7 @@ namespace eMNY.Code.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     CustomerId = table.Column<int>(nullable: false),
                     AccountId = table.Column<int>(nullable: false),
-                    TransactionAmount = table.Column<double>(nullable: false),
+                    TransactionAmount = table.Column<decimal>(nullable: false),
                     TransactionDate = table.Column<DateTime>(nullable: false),
                     IsDeposit = table.Column<bool>(nullable: false)
                 },
@@ -168,14 +145,39 @@ namespace eMNY.Code.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Expenses",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    UserId = table.Column<int>(nullable: false),
+                    AccountId = table.Column<int>(nullable: false),
+                    ExpenseName = table.Column<string>(nullable: true),
+                    TargetBalance = table.Column<decimal>(nullable: false),
+                    CurrentBalance = table.Column<decimal>(nullable: false),
+                    StartDate = table.Column<DateTime>(nullable: false),
+                    TargetDate = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Expenses", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Expenses_Accounts_AccountId",
+                        column: x => x.AccountId,
+                        principalTable: "Accounts",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
-                name: "IX_Account_CardId",
-                table: "Account",
+                name: "IX_Accounts_CardId",
+                table: "Accounts",
                 column: "CardId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Account_CustomerId",
-                table: "Account",
+                name: "IX_Accounts_CustomerId",
+                table: "Accounts",
                 column: "CustomerId");
 
             migrationBuilder.CreateIndex(
@@ -194,6 +196,11 @@ namespace eMNY.Code.Migrations
                 column: "NameId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Expenses_AccountId",
+                table: "Expenses",
+                column: "AccountId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Transactions_CustomerId",
                 table: "Transactions",
                 column: "CustomerId");
@@ -202,13 +209,13 @@ namespace eMNY.Code.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Account");
-
-            migrationBuilder.DropTable(
                 name: "Expenses");
 
             migrationBuilder.DropTable(
                 name: "Transactions");
+
+            migrationBuilder.DropTable(
+                name: "Accounts");
 
             migrationBuilder.DropTable(
                 name: "Customers");

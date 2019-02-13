@@ -10,7 +10,7 @@ using eMNY.Code;
 namespace eMNY.Code.Migrations
 {
     [DbContext(typeof(eMNYDbContext))]
-    [Migration("20190208201551_first_migration")]
+    [Migration("20190213035553_first_migration")]
     partial class first_migration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,7 +21,7 @@ namespace eMNY.Code.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("eMNY.Domain.Abstracts.Account", b =>
+            modelBuilder.Entity("eMNY.Domain.Models.Account", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -29,7 +29,7 @@ namespace eMNY.Code.Migrations
 
                     b.Property<int>("AccountNumber");
 
-                    b.Property<double>("Balance");
+                    b.Property<decimal>("Amount");
 
                     b.Property<int?>("CardId");
 
@@ -37,12 +37,7 @@ namespace eMNY.Code.Migrations
 
                     b.Property<int?>("CustomerId");
 
-                    b.Property<double>("Deposit");
-
-                    b.Property<string>("Discriminator")
-                        .IsRequired();
-
-                    b.Property<double>("InterestRate");
+                    b.Property<decimal>("InterestRate");
 
                     b.Property<bool>("IsChecking");
 
@@ -52,9 +47,7 @@ namespace eMNY.Code.Migrations
 
                     b.HasIndex("CustomerId");
 
-                    b.ToTable("Account");
-
-                    b.HasDiscriminator<string>("Discriminator").HasValue("Account");
+                    b.ToTable("Accounts");
                 });
 
             modelBuilder.Entity("eMNY.Domain.Models.Address", b =>
@@ -134,19 +127,21 @@ namespace eMNY.Code.Migrations
 
                     b.Property<int>("AccountId");
 
-                    b.Property<double>("CurrentBalance");
+                    b.Property<decimal>("CurrentBalance");
 
                     b.Property<string>("ExpenseName");
 
                     b.Property<DateTime>("StartDate");
 
-                    b.Property<double>("TargetBalance");
+                    b.Property<decimal>("TargetBalance");
 
                     b.Property<DateTime>("TargetDate");
 
                     b.Property<int>("UserId");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AccountId");
 
                     b.ToTable("Expenses");
                 });
@@ -178,7 +173,7 @@ namespace eMNY.Code.Migrations
 
                     b.Property<bool>("IsDeposit");
 
-                    b.Property<double>("TransactionAmount");
+                    b.Property<decimal>("TransactionAmount");
 
                     b.Property<DateTime>("TransactionDate");
 
@@ -189,25 +184,7 @@ namespace eMNY.Code.Migrations
                     b.ToTable("Transactions");
                 });
 
-            modelBuilder.Entity("eMNY.Domain.Models.CheckingAccount", b =>
-                {
-                    b.HasBaseType("eMNY.Domain.Abstracts.Account");
-
-                    b.Property<double>("CheckingId");
-
-                    b.HasDiscriminator().HasValue("CheckingAccount");
-                });
-
-            modelBuilder.Entity("eMNY.Domain.Models.SavingsAccount", b =>
-                {
-                    b.HasBaseType("eMNY.Domain.Abstracts.Account");
-
-                    b.Property<double>("SavingsId");
-
-                    b.HasDiscriminator().HasValue("SavingsAccount");
-                });
-
-            modelBuilder.Entity("eMNY.Domain.Abstracts.Account", b =>
+            modelBuilder.Entity("eMNY.Domain.Models.Account", b =>
                 {
                     b.HasOne("eMNY.Domain.Models.Card")
                         .WithMany("Account")
@@ -231,6 +208,14 @@ namespace eMNY.Code.Migrations
                     b.HasOne("eMNY.Domain.Models.Name", "Name")
                         .WithMany()
                         .HasForeignKey("NameId");
+                });
+
+            modelBuilder.Entity("eMNY.Domain.Models.Expense", b =>
+                {
+                    b.HasOne("eMNY.Domain.Models.Account")
+                        .WithMany("Expenses")
+                        .HasForeignKey("AccountId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("eMNY.Domain.Models.Transactions", b =>
