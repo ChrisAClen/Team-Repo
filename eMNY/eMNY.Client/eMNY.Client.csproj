@@ -18,4 +18,9 @@
     <ProjectReference Include="..\eMNY.Domain\eMNY.Domain.csproj" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <Folder Include="wwwroot\images" />
+  </ItemGroup>
+
 </Project>
