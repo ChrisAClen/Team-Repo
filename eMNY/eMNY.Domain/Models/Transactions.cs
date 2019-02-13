@@ -39,11 +39,6 @@ namespace eMNY.Domain.Models
       Validator.ValidateMoney(this) &&
       (TransactionDate != null);
     }
-
-    public void MakeTransaction()
-    {
-
-    }
-      
+    
   }
 }
