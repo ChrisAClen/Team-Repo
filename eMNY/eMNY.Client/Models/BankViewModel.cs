@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc;
 
 namespace eMNY.Client.Models
 {
@@ -17,5 +18,18 @@ namespace eMNY.Client.Models
     public decimal Amount { get; set; }
     public bool IsChecking { get; set; }
 
+    //[HttpGet]
+    //public IActionResult Display()
+    //{
+    //  var i = new Account();
+    //  return View("Account", i);
+    //}
+
+
+
+
+
+
   }
+
 }
