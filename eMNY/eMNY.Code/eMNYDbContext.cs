@@ -17,8 +17,7 @@ namespace eMNY.Code
     public DbSet<Card> Cards { get; set; }
     public DbSet<Name> Names { get; set; }
     public DbSet<Address> Addresses { get; set; }
-    public DbSet<SavingsAccount> SavingsAccounts { get; set; }
-    public DbSet<CheckingAccount> CheckingAccounts { get; set; }
+    public DbSet<Account> Accounts { get; set; }
     public IConfiguration Configuration { get; private set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder builder)

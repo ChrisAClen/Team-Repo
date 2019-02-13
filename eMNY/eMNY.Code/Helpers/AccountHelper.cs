@@ -11,13 +11,13 @@ namespace eMNY.Code.Helpers
   {
     private readonly eMNYDbContext _db = new eMNYDbContext();
 
-    public bool SetSavingsAccount(SavingsAccount savings)
+    public bool SetSavingsAccount(Accounts savings)
     {
       _db.SavingsAccounts.Add(savings);
       return _db.SaveChanges() > 0;
     }
 
-    public List<SavingsAccount> GetSavings()
+    public List<Accounts> GetSavings()
     {
       var account = _db.SavingsAccounts.FromSql("select * from accounts");
       var query = (from s in _db.SavingsAccounts
