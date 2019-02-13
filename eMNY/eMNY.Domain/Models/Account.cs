@@ -40,11 +40,27 @@ namespace eMNY.Domain.Models
       return Balance;
     }
 
+    public static decimal Withdraw(decimal amt)
+    {
+      if (amt <= 0 || Balance > 0)
+        return amt;
+      Balance -= amt;
+      return Balance;
+    }
+
     public decimal Deposit()
     {
       if (Amount <= 0)
         return Amount;
       Balance += Amount;
+      return Balance;
+    }
+
+    public static decimal Deposit(decimal amt)
+    {
+      if (amt <= 0)
+        return amt;
+      Balance += amt;
       return Balance;
     }
 

@@ -1,6 +1,6 @@
 using eMNY.Domain.Abstracts;
 using eMNY.Domain.Interfaces;
-
+using eMNY.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -24,11 +24,11 @@ namespace eMNY.Domain.Models
 
       if (IsDeposit == true)
       {
-
+        Account.Deposit(TransactionAmount);
       }
       else
       {
-
+        Account.Withdraw(TransactionAmount);
       }
     }
 
