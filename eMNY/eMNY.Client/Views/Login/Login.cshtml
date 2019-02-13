@@ -6,35 +6,7 @@
 
   ViewData["Title"] = "Login";
 }
-
-
-<div class="box">
   
-@*<h1 class="display-4">Login</h1>
-  
-  @using (Html.BeginForm("Login", "Login"))
-  {
-    <div class="field">
-      @Html.LabelFor(u => u.UserName, "Enter your username: ")
-      <div class="control">
-        @Html.TextBoxFor(u => u.UserName)
-      </div>
-      @Html.ValidationMessageFor(u => u.UserName)
-    </div>
-    <br/>
-
-    <div class="field">
-      @Html.LabelFor(u => u.Password, "Enter your Password: ")
-      <div class="control">
-        @Html.TextBoxFor(u => u.Password)
-      </div>
-      @Html.ValidationMessageFor(u => u.Password)
-    </div>
-    <br/>
-      
-    <div class="control">
-      <button type="submit">Submit</button>
-    </div>*@
 <div class="box">
   @using (Html.BeginForm("Login", "Login"))
   {
@@ -43,7 +15,7 @@
       <div class="control">
         @Html.TextBoxFor(u => u.UserName, new { @class ="input is-large" })
       </div>
-        @Html.ValidationMessageFor(u => u.UserName)
+      @Html.ValidationMessageFor(u => u.UserName)
     </div> /*end username*/
     
     <div class="field">
