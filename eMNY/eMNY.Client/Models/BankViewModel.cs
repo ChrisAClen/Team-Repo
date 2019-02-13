@@ -18,15 +18,7 @@ namespace eMNY.Client.Models
     public decimal Amount { get; set; }
     public bool IsChecking { get; set; }
 
-    //[HttpGet]
-    //public IActionResult Display()
-    //{
-    //  var i = new Account();
-    //  return View("Account", i);
-    //}
-
-
-
+   
 
 
 
