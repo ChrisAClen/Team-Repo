@@ -1,4 +1,4 @@
-@using Microsoft.IdentityModel.Tokens
+
 @model eMNY.Client.Models.CustomerViewModel
 @{
   Layout = "~/Views/Shared/_Layout.cshtml";
@@ -7,24 +7,26 @@
   ViewData["Title"] = "Login";
 }
   
-<div class="box">
+<div class="container">
   @using (Html.BeginForm("Login", "Login"))
   {
-    <div class="field">
-      @Html.LabelFor(u => u.UserName, "Enter your username: ")
-      <div class="control">
-        @Html.TextBoxFor(u => u.UserName, new { @class ="input is-large" })
+    <h2 class="signin">Please sign in</h2>
+    <div class="row justify-content-center align-items-center" style="height: 100vh">
+      <div class="col-4">
+        <div class="card">
+          <div class="form-group">
+            @Html.LabelFor(u => u.UserName, "Enter your username: ")
+            @Html.TextBoxFor(u => u.UserName)
+            @Html.ValidationMessageFor(u => u.UserName)
+          </div>
+          <div class="form-group">
+            @Html.LabelFor(u => u.Password, "Enter your Password: ")
+            @Html.TextBoxFor(u => u.Password)
+            @Html.ValidationMessageFor(u => u.Password)
+          </div>
+          <button type="button" class="btn btn-primary">Login</button>
+        </div>
       </div>
-      @Html.ValidationMessageFor(u => u.UserName)
-    </div> /*end username*/
-    
-    <div class="field">
-      @Html.LabelFor(u => u.Password, "Enter your Password: ")
-      <div class="control">
-        @Html.TextBoxFor(u => u.Password, new { @class ="input is-large" })
-      </div>
-      @Html.ValidationMessageFor(u => u.Password)
-    </div> /*end password*/
-    <button class="button is-block is-info is-large is-fullwidth">Login</button>
+    </div>
   }
 </div>

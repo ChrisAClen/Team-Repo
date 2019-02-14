@@ -5,41 +5,65 @@
 }
 
 
-<div class="text-center">
-  <h1 class="display-4">Login</h1>
+<div class="container">
   @using (Html.BeginForm("Register", "Login"))
   {
-    @Html.LabelFor(u => u.Name.First, "Enter your FirstName: ")
-    @Html.TextBoxFor(u => u.Name.First)
-    @Html.ValidationMessageFor(u => u.Name)
-    <br />
-    @Html.LabelFor(u => u.Name.Last, "Enter your LastName: ")
-    @Html.TextBoxFor(u => u.Name.Last)
-    @Html.ValidationMessageFor(u => u.Name)
-    <br />
+    <h1 class="display-4">Register</h1>
+    
+    <div class="row justify-content-center align-items-center" style="height: 100vh">
+      <div class="col-4">
+        <div class="card">
+          
+          <div class="form-group">
+            @Html.LabelFor(u => u.Name.First, "Enter your FirstName: ")
+            @Html.TextBoxFor(u => u.Name.First)
+            @Html.ValidationMessageFor(u => u.Name)
+          </div>
 
-    @Html.LabelFor(u => u.UserName, "Enter your new username: ")
-    @Html.TextBoxFor(u => u.UserName)
-    @Html.ValidationMessageFor(u => u.UserName)
-    <br />
+          <br/>
 
-    @Html.LabelFor(u => u.Password, "Enter your Password: ")
-    @Html.TextBoxFor(u => u.Password)
-    @Html.ValidationMessageFor(u => u.Password)
-    <br />
+          <div class="form-group">
+            @Html.LabelFor(u => u.Name.Last, "Enter your LastName: ")
+            @Html.TextBoxFor(u => u.Name.Last)
+            @Html.ValidationMessageFor(u => u.Name)
+          </div>
 
-    @Html.LabelFor(u => u.RePassword, "Re-Enter your Password: ")
-    @Html.TextBoxFor(u => u.RePassword)
-    @Html.ValidationMessageFor(u => u.RePassword)
-    <br />
+          <br/>
 
-    @Html.LabelFor(u => u.Email, "Enter your Email: ")
-    @Html.TextBoxFor(u => u.Email)
-    @Html.ValidationMessageFor(u => u.Email)
-    <br />
+          <div class="form-group">
+            @Html.LabelFor(u => u.UserName, "Enter your new username: ")
+            @Html.TextBoxFor(u => u.UserName)
+            @Html.ValidationMessageFor(u => u.UserName)
+          </div>
 
+          <br/>
 
-    <button type="submit">Submit</button>
-  }
+          <div class="form-group">
+            @Html.LabelFor(u => u.Password, "Enter your Password: ")
+            @Html.TextBoxFor(u => u.Password)
+            @Html.ValidationMessageFor(u => u.Password)
+          </div>
+          <br/>
+
+          <div class="form-group">
+            @Html.LabelFor(u => u.RePassword, "Re-Enter your Password: ")
+            @Html.TextBoxFor(u => u.RePassword)
+            @Html.ValidationMessageFor(u => u.RePassword)
+          </div>
+          <br/>
+
+          <div class="form-group">
+            @Html.LabelFor(u => u.Email, "Enter your Email: ")
+            @Html.TextBoxFor(u => u.Email)
+            @Html.ValidationMessageFor(u => u.Email)
+          </div>
+          
+          <br/>
+
+          <button type="button" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+                                        
+        }
 </div>
-
