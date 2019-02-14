@@ -22,14 +22,6 @@ namespace eMNY.Domain.Models
       TransactionAmount = amount;
       IsDeposit = type;
 
-      if (IsDeposit == true)
-      {
-        Account.Deposit(TransactionAmount);
-      }
-      else
-      {
-        Account.Withdraw(TransactionAmount);
-      }
     }
 
     public override bool IsValid()
