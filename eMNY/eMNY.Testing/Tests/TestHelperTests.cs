@@ -3,7 +3,6 @@ using System;
 using Xunit;
 using System.Collections.Generic;
 using System.Text;
-using eMNY.Domain.Models;
 using eMNY.Code.Helpers;
 
 namespace eMNY.Testing.Tests
@@ -17,7 +16,9 @@ namespace eMNY.Testing.Tests
     {
       sut = new Card()
       {
-        
+        CardNumber = 1738123456789101,
+        Pin = 1234,
+        SecurityNumber = 123        
       };
 
       sutH = new CardHelper();
