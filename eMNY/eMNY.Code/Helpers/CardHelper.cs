@@ -7,7 +7,7 @@ using System.Text;
 
 namespace eMNY.Code.Helpers
 {
-  class CardHelper
+  public class CardHelper
   {
     private readonly eMNYDbContext _db = new eMNYDbContext();
 
