@@ -25,6 +25,12 @@ namespace eMNY.Code
       Configuration = config;
     }
 
+    public eMNYDbContext()
+    {
+
+    }
+
+
     protected override void OnConfiguring(DbContextOptionsBuilder builder)
     {
       builder.UseSqlServer(Configuration.GetConnectionString("eMNYDB"));
