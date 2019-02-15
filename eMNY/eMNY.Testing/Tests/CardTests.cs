@@ -12,9 +12,15 @@ namespace eMNY.Testing.Tests
 
     public CardTests()
     {
+      var exp = new DateTime(2024, 01, 23);
+
       sut = new Card()
       {
-       
+        CardNumber = 1738234523452345,
+        SecurityNumber = 123,
+        Pin = 1234,
+        ExpirationDate = exp
+
       };
     }
 
@@ -25,5 +31,14 @@ namespace eMNY.Testing.Tests
       Assert.True(newCard.ToString().Length == 16);
     }
 
+    [Fact]
+    public void Test_CardProperties()
+    {
+      Assert.IsType<long>(sut.CardNumber);
+      Assert.IsType<int>(sut.SecurityNumber);
+      Assert.IsType<int>(sut.Pin);
+    }
+
   }
 }
+
