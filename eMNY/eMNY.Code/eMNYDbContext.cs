@@ -18,11 +18,22 @@ namespace eMNY.Code
     public DbSet<Name> Names { get; set; }
     public DbSet<Address> Addresses { get; set; }
     public DbSet<Account> Accounts { get; set; }
-    public IConfiguration Configuration { get; private set; }
+    public IConfiguration Configuration { get; set; }
+
+    public eMNYDbContext(IConfiguration config)
+    {
+      Configuration = config;
+    }
+
+    public eMNYDbContext()
+    {
+
+    }
+
 
     protected override void OnConfiguring(DbContextOptionsBuilder builder)
     {
-      builder.UseSqlServer(Configuration.GetConnectionString("EschmnyDatabase"));
+      builder.UseSqlServer(Configuration.GetConnectionString("eMNYDB"));
     }
 
     protected override void OnModelCreating(ModelBuilder builder)

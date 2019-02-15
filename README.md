@@ -20,6 +20,8 @@ Ultimately, the goal of this app is to make the banking process easier and faste
 + C#
 + SQL
 + EF Migrations
++ Razor Pages
++ Microsoft Azure Cloud Services
 + Agile/Scrum with Pivotal Tracker
 + DevOps with Azure DevOps
 + SCM/VCS with GitHub
@@ -28,9 +30,9 @@ Ultimately, the goal of this app is to make the banking process easier and faste
 
 ## maintainers
 
-![Christopher A Clendinen](https://avatars1.githubusercontent.com/u/45204662?s=64&v=4)
-![Edmond Thompson](https://avatars2.githubusercontent.com/u/8095689?s=64&v=4)
-![Narely Najera](https://avatars0.githubusercontent.com/u/44989081?s=64&v=4)
+[![Christopher A Clendinen](https://avatars1.githubusercontent.com/u/45204662?s=64&v=4)](https://github.com/ChrisAClen)
+[![Edmond Thompson](https://avatars2.githubusercontent.com/u/8095689?s=64&v=4)](https://github.com/edmondjthompson)
+[![Narely Najera](https://avatars0.githubusercontent.com/u/44989081?s=64&v=4)](https://github.com/nnarely)
 
 
 ## license
