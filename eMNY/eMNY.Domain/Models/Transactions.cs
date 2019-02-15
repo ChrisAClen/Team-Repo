@@ -16,7 +16,7 @@ namespace eMNY.Domain.Models
 
     public bool IsDeposit { get; set; }
 
-    public Transactions()
+    public Transactions ()
     {
 
     }

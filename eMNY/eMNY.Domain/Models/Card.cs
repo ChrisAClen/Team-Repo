@@ -15,6 +15,13 @@ namespace eMNY.Domain.Models
 
     private Random rnd;
 
+    public Card()
+    {
+      DateTime today = DateTime.Now;
+      DateTime exp = today.AddYears(4);
+      ExpirationDate = exp;
+    }
+
     public override bool IsValid()
     {
       return 

@@ -33,8 +33,7 @@ namespace eMNY.Code
 
     protected override void OnConfiguring(DbContextOptionsBuilder builder)
     {
-     // builder.UseSqlServer(Configuration.GetConnectionString("eMNYDB"));
-     builder.UseSqlServer("server = clendinendotnet2019.database.windows.net; database = eMNYDB; user id = sqladmin; password = Florida2019;");
+      builder.UseSqlServer("server=clendinendotnet2019.database.windows.net;database=eMNYDB; user id=sqladmin;password=Florida2019;");
     }
 
     protected override void OnModelCreating(ModelBuilder builder)
