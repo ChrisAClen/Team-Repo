@@ -14,9 +14,6 @@ namespace eMNY.Code.Helpers
 
     public bool SetCard(Card card)
     {
-      DateTime today = DateTime.Now;
-      DateTime exp = today.AddYears(4);
-      card.ExpirationDate = exp;
       _db.Cards.Add(card);
       return _db.SaveChanges() > 0;
     }

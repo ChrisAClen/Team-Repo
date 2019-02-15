@@ -16,6 +16,11 @@ namespace eMNY.Domain.Models
 
     public bool IsDeposit { get; set; }
 
+    public Transactions ()
+    {
+
+    }
+
     public Transactions(decimal amount, bool type)
     {
       TransactionDate = DateTime.Now;

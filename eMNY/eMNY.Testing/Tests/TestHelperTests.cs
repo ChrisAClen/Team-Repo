@@ -9,7 +9,7 @@ namespace eMNY.Testing.Tests
 {
   public class TestHelperTests
   {
-    private Card sut;
+    private readonly Card sut;
     public CardHelper sutH { get; set; }
 
     public TestHelperTests()
@@ -25,7 +25,7 @@ namespace eMNY.Testing.Tests
     }
 
     [Fact]
-    public void Test_SetUser()
+    public void Test_SetCard()
     {
       Assert.True(sutH.SetCard(sut));
     }
