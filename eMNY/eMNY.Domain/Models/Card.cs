@@ -13,7 +13,7 @@ namespace eMNY.Domain.Models
     public int Pin { get; set; }
     public DateTime ExpirationDate { get; set; }
 
-    public Random rnd;
+    private Random rnd;
 
     public override bool IsValid()
     {

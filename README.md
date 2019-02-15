@@ -20,6 +20,8 @@ Ultimately, the goal of this app is to make the banking process easier and faste
 + C#
 + SQL
 + EF Migrations
++ Razor Pages
++ Microsoft Azure Cloud Services
 + Agile/Scrum with Pivotal Tracker
 + DevOps with Azure DevOps
 + SCM/VCS with GitHub
