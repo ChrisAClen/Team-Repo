@@ -10,18 +10,18 @@ namespace eMNY.Code.Helpers
   {
     private readonly eMNYDbContext _db = new eMNYDbContext();
 
-    public bool SetUser(Customer user)
+    public bool SetCustomer(Customer customer)
     {
-      _db.Customers.Add(user);
+      _db.Customers.Add(customer);
       return _db.SaveChanges() > 0;
     }
 
-    public List<Customer> GetUsers()
+    public List<Customer> GetCustomers()
     {
-      var users = _db.Customers.FromSql("select * from customers");
+      var customers = _db.Customers.FromSql("select * from customers");
       var query = (from u in _db.Customers
                    select u).ToList();
-      return _db.Customers.Include(m => m.Name).ToList(); //lazy loading
+      return _db.Customers.ToList(); //lazy loading
     }
   }
 }

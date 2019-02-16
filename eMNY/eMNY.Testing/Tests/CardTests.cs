@@ -29,6 +29,7 @@ namespace eMNY.Testing.Tests
     public void CardTest()
     {
       Assert.True(sut.CardNumber.ToString().Length == 16);
+      Assert.True(sut.Pin.ToString().Length == 4);
     }
 
     [Fact]
