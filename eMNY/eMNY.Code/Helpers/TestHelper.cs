@@ -24,7 +24,7 @@ namespace eMNY.Code.Helpers
       var query = (from u in card
                    select u).ToList();
 
-      return query.ToList(); //lazy loading
+      return query; //lazy loading
     }
   }
 }
