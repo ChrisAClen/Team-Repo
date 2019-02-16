@@ -7,7 +7,7 @@ using System.Text;
 
 namespace eMNY.Code.Helpers
 {
-  class NameHelper
+  public class NameHelper
   {
     private readonly eMNYDbContext _db = new eMNYDbContext();
 
@@ -22,7 +22,7 @@ namespace eMNY.Code.Helpers
       var name = _db.Names.FromSql("select * from names");
       var query = (from s in _db.Names
                    select s).ToList();
-      return _db.Names.Include(m => m.First).ToList(); //lazy loading
+      return _db.Names.ToList(); //lazy loading
     }
 
   }

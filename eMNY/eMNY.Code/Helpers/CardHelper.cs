@@ -22,7 +22,7 @@ namespace eMNY.Code.Helpers
       var card = _db.Cards.FromSql("select * from cards");
       var query = (from u in _db.Cards
                    select u).ToList();
-      return _db.Cards.Include(m => m.CardNumber).ToList(); //lazy loading
+      return _db.Cards.ToList(); //lazy loading
     }
   }
 }
