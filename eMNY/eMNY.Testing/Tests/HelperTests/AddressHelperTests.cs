@@ -3,6 +3,7 @@ using eMNY.Code.Helpers;
 using eMNY.Domain.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Xunit;
 
@@ -32,6 +33,16 @@ namespace eMNY.Testing.Tests.HelperTests
     public void Test_SetAddress()
     {
       Assert.True(Sut.SetAddress(sua));
+    }
+
+    [Fact]
+    public void Test_GetAddress()
+    {
+      var sugl = Sut.GetAddress();
+
+      Assert.NotNull(sugl);
+      Assert.True(sugl.FirstOrDefault().Street == "701 Cherry Lane");
+      Assert.True(sugl.Last().PostalCode== "76140");
     }
 
   }
