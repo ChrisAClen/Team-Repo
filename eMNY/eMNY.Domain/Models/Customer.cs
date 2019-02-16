@@ -14,8 +14,6 @@ namespace eMNY.Domain.Models
     public string UserName { get; set; }
     public string Password { get; set; }
     public string Email { get; set; }
-    public int AccountId { get; set; }
-    
 
     public Customer()
     {
@@ -24,17 +22,16 @@ namespace eMNY.Domain.Models
       Transactions = new List<Transactions>();
       Accounts = new List<Account>();
     }
-    
+
     public override bool IsValid()
     {
-      return 
+      return
       Validator.ValidateString(this) &&
       Validator.ValidateNumber(this) &&
       Name.IsValid() &&
       Card.IsValid();
     }
-    
+
   }
 }
-
 

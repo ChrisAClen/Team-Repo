@@ -92,8 +92,6 @@ namespace eMNY.Code.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("AccountId");
-
                     b.Property<int?>("AddressId");
 
                     b.Property<int?>("CardId");
@@ -123,19 +121,17 @@ namespace eMNY.Code.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("AccountId");
+                    b.Property<int?>("AccountId");
 
-                    b.Property<decimal>("CurrentBalance");
+                    b.Property<decimal>("Amount");
+
+                    b.Property<string>("Category");
+
+                    b.Property<int>("CustomerId");
+
+                    b.Property<DateTime>("ExpenseDate");
 
                     b.Property<string>("ExpenseName");
-
-                    b.Property<DateTime>("StartDate");
-
-                    b.Property<decimal>("TargetBalance");
-
-                    b.Property<DateTime>("TargetDate");
-
-                    b.Property<int>("UserId");
 
                     b.HasKey("Id");
 
@@ -167,7 +163,7 @@ namespace eMNY.Code.Migrations
 
                     b.Property<int>("AccountId");
 
-                    b.Property<int>("CustomerId");
+                    b.Property<int?>("CustomerId");
 
                     b.Property<bool>("IsDeposit");
 
@@ -212,16 +208,14 @@ namespace eMNY.Code.Migrations
                 {
                     b.HasOne("eMNY.Domain.Models.Account")
                         .WithMany("Expenses")
-                        .HasForeignKey("AccountId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("AccountId");
                 });
 
             modelBuilder.Entity("eMNY.Domain.Models.Transactions", b =>
                 {
                     b.HasOne("eMNY.Domain.Models.Customer")
                         .WithMany("Transactions")
-                        .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("CustomerId");
                 });
 #pragma warning restore 612, 618
         }

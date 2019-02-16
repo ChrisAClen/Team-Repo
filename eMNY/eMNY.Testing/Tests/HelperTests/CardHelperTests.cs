@@ -48,7 +48,7 @@ namespace eMNY.Testing.Tests.HelperTests
       var sugl = Sut.GetCards();
 
       Assert.NotNull(sugl);
-      Assert.True(sugl.FirstOrDefault().SecurityNumber == 123);
+      Assert.True(sugl.FirstOrDefault().SecurityNumber == 909);
       Assert.True(sugl.FirstOrDefault().Pin == 1234);
     }
 

@@ -13,10 +13,8 @@ namespace eMNY.Testing.Tests
       sut = new Expense()
       {
         ExpenseName = "Rent",
-        TargetBalance = 1000m,
-        CurrentBalance = 500m,
-        StartDate = DateTime.Now,
-        TargetDate = DateTime.Now
+        Amount = 1000m,
+        ExpenseDate = DateTime.Now
       };
     }
 
@@ -24,10 +22,8 @@ namespace eMNY.Testing.Tests
     public void ExpenseTest()
     {
       Assert.IsType<string>(sut.ExpenseName);
-      Assert.IsType<decimal>(sut.TargetBalance);
-      Assert.IsType<decimal>(sut.CurrentBalance);
-      Assert.IsType<DateTime>(sut.StartDate);
-      Assert.IsType<DateTime>(sut.TargetDate);
+      Assert.IsType<decimal>(sut.Amount);
+      Assert.IsType<DateTime>(sut.ExpenseDate);
     }
   }
 }

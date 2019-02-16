@@ -22,7 +22,8 @@ namespace eMNY.Code.Helpers
       var exp = _db.Expenses.FromSql("select * from expenses");
       var query = (from s in _db.Expenses
                    select s).ToList();
-      return _db.Expenses.Include(m => m.TargetBalance).ToList(); //lazy loading
+      return _db.Expenses.ToList(); //lazy loading
     }
   }
 }
+
