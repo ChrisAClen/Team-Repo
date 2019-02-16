@@ -22,7 +22,7 @@ namespace eMNY.Code.Helpers
       var users = _db.Addresses.FromSql("select * from addresses");
       var query = (from u in _db.Addresses
                    select u).ToList();
-      return _db.Addresses.Include(m => m.Street).Include(m => m.City).Include(m => m.StateProvince).ToList(); //lazy loading
+      return _db.Addresses.ToList(); //lazy loading
     }
   }
 }

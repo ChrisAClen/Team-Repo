@@ -33,15 +33,5 @@ namespace eMNY.Testing.Tests
       Assert.IsType<string>(sut.StateProvince);
       Assert.IsType<string>(sut.PostalCode);
     }
-
-
-
-    [Fact]
-    public void Test_HelperSetAddress()
-    {
-
-      Assert.True(ah.SetAddress(sut));
-    }
-
   }
 }

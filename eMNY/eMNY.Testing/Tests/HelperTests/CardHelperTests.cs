@@ -22,12 +22,19 @@ namespace eMNY.Testing.Tests.HelperTests
 
       Suc = new Card()
       {
-        CardNumber = 1738234523452345,
-        SecurityNumber = 123,
-        Pin = 1234,
         ExpirationDate = exp
 
       };
+    }
+
+    [Fact]
+    public void CardCreationTest()
+    {
+      {
+        long ncard = Suc.CreateCardNumber();
+
+        //test with an assert to see if its actually setting to the 
+      }
     }
 
     [Fact]
@@ -35,6 +42,8 @@ namespace eMNY.Testing.Tests.HelperTests
     {
       Assert.True(Sut.SetCard(Suc));
     }
+
+
 
   }
 }
