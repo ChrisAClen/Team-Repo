@@ -17,17 +17,14 @@ namespace eMNY.Testing.Tests.HelperTests
     [Fact]
     public void Test_SetCustomer()
     {
-      Assert.True(Sut.SetCustomer(sua));
+
     }
 
     [Fact]
     public void Test_GetCustomer()
     {
-      var sugl = Sut.GetCustomers();
 
-      Assert.NotNull(sugl);
-      Assert.True(sugl.FirstOrDefault().UserName == "701 Cherry Lane");
-      Assert.True(sugl.Last().Password == "76140");
+
     }
   }
 }
