@@ -65,8 +65,7 @@ namespace eMNY.Code.Migrations
                     CardId = table.Column<int>(nullable: true),
                     UserName = table.Column<string>(nullable: true),
                     Password = table.Column<string>(nullable: true),
-                    Email = table.Column<string>(nullable: true),
-                    AccountId = table.Column<int>(nullable: false)
+                    Email = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -128,11 +127,11 @@ namespace eMNY.Code.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    CustomerId = table.Column<int>(nullable: false),
                     AccountId = table.Column<int>(nullable: false),
                     TransactionAmount = table.Column<decimal>(nullable: false),
                     TransactionDate = table.Column<DateTime>(nullable: false),
-                    IsDeposit = table.Column<bool>(nullable: false)
+                    IsDeposit = table.Column<bool>(nullable: false),
+                    CustomerId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -142,7 +141,7 @@ namespace eMNY.Code.Migrations
                         column: x => x.CustomerId,
                         principalTable: "Customers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -151,13 +150,12 @@ namespace eMNY.Code.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    UserId = table.Column<int>(nullable: false),
-                    AccountId = table.Column<int>(nullable: false),
+                    CustomerId = table.Column<int>(nullable: false),
                     ExpenseName = table.Column<string>(nullable: true),
-                    TargetBalance = table.Column<decimal>(nullable: false),
-                    CurrentBalance = table.Column<decimal>(nullable: false),
-                    StartDate = table.Column<DateTime>(nullable: false),
-                    TargetDate = table.Column<DateTime>(nullable: false)
+                    Amount = table.Column<decimal>(nullable: false),
+                    Category = table.Column<string>(nullable: true),
+                    ExpenseDate = table.Column<DateTime>(nullable: false),
+                    AccountId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -167,7 +165,7 @@ namespace eMNY.Code.Migrations
                         column: x => x.AccountId,
                         principalTable: "Accounts",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(

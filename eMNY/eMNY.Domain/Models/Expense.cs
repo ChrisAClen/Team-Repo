@@ -6,16 +6,14 @@ using System.Text;
 
 namespace eMNY.Domain.Models
 {
-  public class Expense: AThing
+  public class Expense : AThing
   {
     public int CustomerId { get; set; }
-    public int AccountId { get; set; }
 
     public string ExpenseName { get; set; }
-    public decimal TargetBalance { get; set; }
-    public decimal CurrentBalance { get; set; }
-    public DateTime StartDate { get; set; }
-    public DateTime TargetDate { get; set; }
+    public decimal Amount { get; set; }
+    public string Category { get; set; }
+    public DateTime ExpenseDate { get; set; }
 
     public override bool IsValid()
     {
@@ -24,10 +22,10 @@ namespace eMNY.Domain.Models
       Validator.ValidateMoney(this);
     }
 
-    public decimal StartBudget()
+    public decimal SetExpense()
     {
-
-      return TargetBalance;
+      return Amount;
     }
   }
 }
+

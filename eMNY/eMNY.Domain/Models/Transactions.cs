@@ -9,14 +9,13 @@ namespace eMNY.Domain.Models
 {
   public class Transactions : AThing
   {
-    public int CustomerId { get; set; }
     public int AccountId { get; set; }
     public decimal TransactionAmount { get; set; }
     public DateTime TransactionDate { get; set; }
 
     public bool IsDeposit { get; set; }
 
-    public Transactions ()
+    public Transactions()
     {
 
     }
@@ -26,16 +25,15 @@ namespace eMNY.Domain.Models
       TransactionDate = DateTime.Now;
       TransactionAmount = amount;
       IsDeposit = type;
-
     }
 
     public override bool IsValid()
     {
-      return 
+      return
       Validator.ValidateNumber(this) &&
       Validator.ValidateMoney(this) &&
       (TransactionDate != null);
     }
-    
   }
 }
+
