@@ -22,6 +22,8 @@ namespace eMNY.Testing.Tests
         SecurityNumber = 123        
       };
 
+      
+
       sutH = new TestHelper();
     }
 
@@ -32,12 +34,25 @@ namespace eMNY.Testing.Tests
     }
 
     [Fact]
+    public void Test_SetRCard()
+    {
+      var sutR = sut;
+      sutR.CardNumber = sut.CreateCardNumber();
+      sutR.SecurityNumber = sut.CreateSecurityNumber();
+      Assert.True(sutR.CardNumber != 1738123456789101);
+      Assert.True(sutR.SecurityNumber != 123);
+      Assert.True(sutH.SetCard(sutR));
+    }
+
+    [Fact]
     public void Test_GetCard()
     {
       var sutGC = sutH.GetCards();
 
       Assert.NotNull(sutGC);
       Assert.True(sutGC.FirstOrDefault().CardNumber == 1738123456789101);
+      Assert.True(sutGC.FirstOrDefault().SecurityNumber == 123);
+      Assert.True(sutGC.FirstOrDefault().Pin == 1234);
     }
   }
 }
