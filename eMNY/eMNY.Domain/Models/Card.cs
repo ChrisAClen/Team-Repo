@@ -46,7 +46,7 @@ namespace eMNY.Domain.Models
     public int CreateSecurityNumber()
     {
       rnd = new Random();
-      int RandNumb = rnd.Next(100);
+      int RandNumb = rnd.Next(100,999);
       SecurityNumber = int.Parse(RandNumb.ToString());
       return SecurityNumber;
     }
