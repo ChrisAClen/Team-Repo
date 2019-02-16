@@ -28,8 +28,7 @@ namespace eMNY.Testing.Tests
     [Fact]
     public void CardTest()
     {
-      long newCard = sut.CreateCardNumber();
-      Assert.True(newCard.ToString().Length == 16);
+      Assert.True(sut.CardNumber.ToString().Length == 16);
     }
 
     [Fact]
