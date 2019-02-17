@@ -16,7 +16,7 @@ namespace eMNY.Code.Helpers
       return _db.SaveChanges() > 0;
     }
 
-    public static List<Customer> GetCustomers()
+    public List<Customer> GetCustomers()
     {
       var customers = _db.Customers.FromSql("select * from customers");
       var query = (from u in _db.Customers

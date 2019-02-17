@@ -8,7 +8,10 @@ namespace eMNY.Client.ViewModels
   {
     public List<edm.Customer> GetCustomers()
     {
-      return CustomerHelper.GetCustomers();
+      var ch = new CustomerHelper();
+      return ch.GetCustomers();
     }
+    
+    
   }
 }
