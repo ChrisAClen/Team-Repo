@@ -8,7 +8,7 @@ namespace eMNY.Code.Helpers
 {
   public class CustomerHelper
   {
-    private readonly eMNYDbContext _db = new eMNYDbContext();
+    private static readonly eMNYDbContext _db = new eMNYDbContext();
 
     public bool SetCustomer(Customer customer)
     {
@@ -16,7 +16,7 @@ namespace eMNY.Code.Helpers
       return _db.SaveChanges() > 0;
     }
 
-    public List<Customer> GetCustomers()
+    public static List<Customer> GetCustomers()
     {
       var customers = _db.Customers.FromSql("select * from customers");
       var query = (from u in _db.Customers
