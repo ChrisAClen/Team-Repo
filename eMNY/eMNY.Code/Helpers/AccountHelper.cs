@@ -17,7 +17,7 @@ namespace eMNY.Code.Helpers
       return _db.SaveChanges() > 0;
     }
 
-    public List<Account> GetAccount()
+    public List<Account> GetAccounts()
     {
       var account = _db.Accounts.FromSql("select * from accounts");
       var query = (from s in _db.Accounts
