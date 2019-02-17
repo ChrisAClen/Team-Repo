@@ -21,6 +21,8 @@ namespace eMNY.Domain.Models
       Card = new Card();
       Transactions = new List<Transactions>();
       Accounts = new List<Account>();
+      UserName = string.Empty;
+
     }
 
     public override bool IsValid()
