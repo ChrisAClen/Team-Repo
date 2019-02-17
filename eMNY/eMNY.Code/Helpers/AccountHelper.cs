@@ -22,8 +22,9 @@ namespace eMNY.Code.Helpers
       var account = _db.Accounts.FromSql("select * from accounts");
       var query = (from s in _db.Accounts
                    select s).ToList();
-      return _db.Accounts.Include(m => m.AccountNumber).ToList(); //lazy loading
+      return _db.Accounts.ToList(); //lazy loading
     }
+
 
     
   }

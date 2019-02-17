@@ -11,7 +11,7 @@ namespace eMNY.Testing.Tests.HelperTests
 {
   public class AccountHelperTests
   {
-    private readonly Account sua;
+    public Account sua { get; set; }
     public AccountHelper ah { get; set; }
 
     public Customer customer { get; set; }
@@ -19,10 +19,9 @@ namespace eMNY.Testing.Tests.HelperTests
 
     public AccountHelperTests()
     {
-      suc = new Card()
-      {
-        Pin = 4444,
-      };
+      ah = new AccountHelper();
+
+
 
       sua = new Account()
       {
@@ -30,14 +29,23 @@ namespace eMNY.Testing.Tests.HelperTests
         CreationDate = DateTime.Now,
         InterestRate = 17.38m,
         Amount = 60000.50m,
-
       };
+
+    }
+
+    [Fact]
+    public void AccountTest()
+    {
+      Assert.IsType<int>(sua.AccountNumber);
+      Assert.IsType<DateTime>(sua.CreationDate);
+      Assert.IsType<decimal>(sua.InterestRate);
+      Assert.IsType<decimal>(sua.Amount);
     }
 
     [Fact]
     public void Test_SetAccount()
     {
-      
+ 
     }
 
     [Fact]
