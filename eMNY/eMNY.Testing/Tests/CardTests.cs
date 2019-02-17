@@ -16,11 +16,7 @@ namespace eMNY.Testing.Tests
 
       sut = new Card()
       {
-        CardNumber = 1738234523452345,
-        SecurityNumber = 123,
         Pin = 1234,
-        ExpirationDate = exp
-
       };
     }
 
