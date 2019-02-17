@@ -11,7 +11,7 @@ namespace eMNY.Testing.Tests.HelperTests
 {
   public class CustomerHelperTests
   {
-    private readonly Customer sutC;
+    public Customer sutC { get; set; }
     public CustomerHelper Sut { get; set; }
     
     public Card Card { get; set; }
@@ -34,32 +34,19 @@ namespace eMNY.Testing.Tests.HelperTests
 
       Card = new Card()
       {
-        Pin = 4444,
+        Pin = 4444
       };
 
-      sutC = new Customer()
+     sutC = new Customer()
       {
         Name = Name,
         Address = Address,
         Card = Card,
+
         UserName = "cardib",
         Password = "Pass123",
         Email = "pass@email.com"
-   
       };
-    }
-
-    [Fact]
-    public void Test_SetCustomer()
-    {
-     
-    }
-
-    [Fact]
-    public void Test_GetCustomer()
-    {
-
-
     }
 
     [Fact]
@@ -67,11 +54,15 @@ namespace eMNY.Testing.Tests.HelperTests
     {
       Assert.IsType<string>(sutC.UserName);
       Assert.NotNull(sutC.UserName);
+      Assert.NotEmpty(sutC.UserName);
       Assert.IsType<string>(sutC.Password);
       Assert.NotNull(sutC.Password);
       Assert.IsType<string>(sutC.Email);
       Assert.NotNull(sutC.Email);
       Assert.IsType<Customer>(sutC);
+      Assert.True(sutC.UserName == "cardib");
+      Assert.True(sutC.Password == "Pass123");
+      Assert.True(sutC.Email == "pass@email.com");
 
     }
 
@@ -79,25 +70,49 @@ namespace eMNY.Testing.Tests.HelperTests
     public void NameTest()
     {
       Assert.IsType<Name>(sutC.Name);
-      Assert.IsType<string>(Name.First);
-      Assert.IsType<string>(Name.Last);
+      Assert.IsType<string>(sutC.Name.First);
+      Assert.IsType<string>(sutC.Name.Last);
+      Assert.True(sutC.Name.First == "John");
+      Assert.True(sutC.Name.Last == "Smith");
     }
 
     [Fact]
     public void AddressTest()
     {
       Assert.IsType<Address>(sutC.Address);
-      Assert.IsType<string>(Address.Street);
-      Assert.IsType<string>(Address.City);
-      Assert.IsType<string>(Address.StateProvince);
-      Assert.IsType<string>(Address.PostalCode);
+      Assert.IsType<string>(sutC.Address.Street);
+      Assert.IsType<string>(sutC.Address.City);
+      Assert.IsType<string>(sutC.Address.StateProvince);
+      Assert.IsType<string>(sutC.Address.PostalCode);
+      Assert.True(sutC.Address.Street == "3230 Banyan Cir");
+      Assert.True(sutC.Address.City == "Tampa");
+      Assert.True(sutC.Address.StateProvince == "FL");
+      Assert.True(sutC.Address.PostalCode == "33613");
+
     }
 
     [Fact]
     public void CardTest()
     {
       Assert.IsType<Card>(sutC.Card);
-      Assert.IsType<int>(Card.Pin);
+      Assert.IsType<int>(sutC.Card.Pin);
+      Assert.True(sutC.Card.Pin == 4444);
+      Assert.True(sutC.Card.CardNumber > 1738000000000000);
+      Assert.True(sutC.Card.SecurityNumber > 100);
+
+    }
+
+    [Fact]
+    public void Test_SetCustomer()
+    {
+      //Assert.True(Sut.SetCustomer(sutC));
+    }
+
+    [Fact]
+    public void Test_GetCustomer()
+    {
+
+
     }
 
   }
