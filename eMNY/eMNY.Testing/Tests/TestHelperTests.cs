@@ -41,7 +41,7 @@ namespace eMNY.Testing.Tests
       sutR.SecurityNumber = sut.CreateSecurityNumber();
       Assert.True(sutR.CardNumber != 1738123456789101);
       Assert.True(sutR.SecurityNumber != 123);
-      Assert.True(sutH.SetCard(sutR));
+     
     }
 
     [Fact]

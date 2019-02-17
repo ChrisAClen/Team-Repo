@@ -20,6 +20,12 @@ namespace eMNY.Domain.Models
       DateTime today = DateTime.Now;
       DateTime exp = today.AddYears(4);
       ExpirationDate = exp;
+
+      long cnd = CreateCardNumber();
+      int sec = CreateSecurityNumber();
+
+      CardNumber = cnd;
+      SecurityNumber = sec;
     }
 
     public override bool IsValid()

@@ -26,8 +26,7 @@ namespace eMNY.Testing.Tests
 
       Card = new Card()
       {
-        CardNumber = 1234123412341234,
-        SecurityNumber = 123,
+
         Pin = 1234
 
       };

@@ -20,13 +20,9 @@ namespace eMNY.Testing.Tests.HelperTests
 
       Sut = new CardHelper();
 
-      var exp = new DateTime(2024, 01, 23);
       Suc = new Card()
       {
-        CardNumber = 1738234523452345,
-        SecurityNumber = 123,
         Pin = 1234,
-        ExpirationDate = exp
       };
     }
 
@@ -34,11 +30,6 @@ namespace eMNY.Testing.Tests.HelperTests
     [Fact]
     public void Test_SetRCard()
     {
-
-      Suc.CardNumber = Suc.CreateCardNumber();
-      Suc.SecurityNumber = Suc.CreateSecurityNumber();
-      Assert.True(Suc.CardNumber != 1738123456789101);
-      Assert.True(Suc.SecurityNumber != 123);
       Assert.True(Sut.SetCard(Suc));
     }
 
