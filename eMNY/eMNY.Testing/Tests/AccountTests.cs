@@ -28,8 +28,8 @@ namespace eMNY.Testing.Tests
     {
       Assert.IsType<int>(sut.AccountNumber);
       Assert.IsType<DateTime>(sut.CreationDate);
-      Assert.IsType<Decimal>(sut.InterestRate);
-      Assert.IsType<Decimal>(sut.Amount);
+      Assert.IsType<decimal>(sut.InterestRate);
+      Assert.IsType<decimal>(sut.Amount);
     }
 
   }

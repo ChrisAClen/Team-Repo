@@ -22,7 +22,7 @@ namespace eMNY.Code.Helpers
       var trans = _db.Transactions.FromSql("select * from transactions");
       var query = (from s in _db.Transactions
                    select s).ToList();
-      return _db.Transactions.Include(m => m.TransactionAmount).ToList(); //lazy loading
+      return _db.Transactions.ToList(); //lazy loading
     }
   }
 }

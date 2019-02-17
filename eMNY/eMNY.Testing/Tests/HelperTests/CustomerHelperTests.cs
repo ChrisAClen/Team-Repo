@@ -20,9 +20,12 @@ namespace eMNY.Testing.Tests.HelperTests
 
     public CustomerHelperTests()
     {
+      Sut = new CustomerHelper();
 
       Name = new Name()
-      { First = "John", Last = "Smith" };
+      { First = "John",
+        Last = "Smith"
+      };
 
       Address = new Address()
       {
@@ -43,7 +46,7 @@ namespace eMNY.Testing.Tests.HelperTests
         Address = Address,
         Card = Card,
 
-        UserName = "cardib",
+        UserName = "michelle",
         Password = "Pass123",
         Email = "pass@email.com"
       };
@@ -60,7 +63,7 @@ namespace eMNY.Testing.Tests.HelperTests
       Assert.IsType<string>(sutC.Email);
       Assert.NotNull(sutC.Email);
       Assert.IsType<Customer>(sutC);
-      Assert.True(sutC.UserName == "cardib");
+      Assert.True(sutC.UserName == "michelle");
       Assert.True(sutC.Password == "Pass123");
       Assert.True(sutC.Email == "pass@email.com");
 
@@ -105,13 +108,17 @@ namespace eMNY.Testing.Tests.HelperTests
     [Fact]
     public void Test_SetCustomer()
     {
-      //Assert.True(Sut.SetCustomer(sutC));
+      Assert.True(Sut.SetCustomer(sutC));
     }
 
     [Fact]
     public void Test_GetCustomer()
     {
+      var sugl = Sut.GetCustomers();
 
+      Assert.NotNull(sugl);
+      Assert.True(sugl.FirstOrDefault().UserName == "michelle");
+      Assert.True(sugl.FirstOrDefault().Password == "Pass123");
 
     }
 
