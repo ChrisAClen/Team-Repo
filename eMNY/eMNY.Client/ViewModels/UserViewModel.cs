@@ -11,7 +11,20 @@ namespace eMNY.Client.ViewModels
       var ch = new CustomerHelper();
       return ch.GetCustomers();
     }
-    
-    
+
+    internal bool Register(edm.Name name, string username, string password, string email)
+    {
+      var ch = new CustomerHelper();
+
+      var cust = new edm.Customer
+      {
+        Name = name,
+        UserName = username,
+        Password = password,
+        Email = email
+      };
+
+      return ch.SetCustomer(cust);
+    }
   }
 }
