@@ -11,6 +11,11 @@ namespace eMNY.Client.ViewModels
       var ch = new CustomerHelper();
       return ch.GetCustomers();
     }
+     
+    public static edm.Customer GetCustomerByUserName(string username)
+    {
+      return CustomerHelper.GetCustomerByUserName(username);
+    }
 
     public bool ULogin(string username, string password)
     {
