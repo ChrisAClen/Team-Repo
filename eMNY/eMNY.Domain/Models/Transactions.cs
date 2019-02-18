@@ -9,7 +9,6 @@ namespace eMNY.Domain.Models
 {
   public class Transactions : AThing
   {
-    public int AccountId { get; set; }
     public decimal TransactionAmount { get; set; }
     public DateTime TransactionDate { get; set; }
 

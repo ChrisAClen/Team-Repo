@@ -41,8 +41,7 @@ namespace eMNY.Testing.Tests.HelperTests
       var sugl = Sut.GetAddress();
 
       Assert.NotNull(sugl);
-      Assert.True(sugl.FirstOrDefault().Street == "701 Cherry Lane");
-      Assert.True(sugl.Last().PostalCode== "76140");
+      Assert.True(sugl.FirstOrDefault().Street == "4200 North Lois Ave");
     }
 
   }

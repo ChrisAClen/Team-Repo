@@ -40,8 +40,8 @@ namespace eMNY.Testing.Tests.HelperTests
       var sugl = Sut.GetNames();
 
       Assert.NotNull(sugl);
-      Assert.True(sugl.FirstOrDefault().First == "Jane");
-      Assert.True(sugl.FirstOrDefault().Last == "Doe");
+      Assert.True(sugl.FirstOrDefault().First == "Frank");
+      Assert.True(sugl.FirstOrDefault().Last == "Sinatra");
     }
   }
 }

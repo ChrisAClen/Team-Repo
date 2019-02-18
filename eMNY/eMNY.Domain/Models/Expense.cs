@@ -8,8 +8,6 @@ namespace eMNY.Domain.Models
 {
   public class Expense : AThing
   {
-    public int CustomerId { get; set; }
-
     public string ExpenseName { get; set; }
     public decimal Amount { get; set; }
     public string Category { get; set; }
