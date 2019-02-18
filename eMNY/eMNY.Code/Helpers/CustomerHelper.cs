@@ -25,12 +25,12 @@ namespace eMNY.Code.Helpers
       return _db.Customers.ToList(); //lazy loading
     }
 
-    public static Customer GetCustomerByUserName(string username)
+    public Customer GetCustomerByUserName(string username)
     {
       return _db.Customers.FirstOrDefault(m => m.UserName == username);
     }
 
-    public static bool GetLogin(string username, string password)
+    public bool GetLogin(string username, string password)
     {
       var logIn = GetCustomerByUserName(username);
       if (logIn != null)

@@ -118,6 +118,13 @@ namespace eMNY.Testing.Tests.HelperTests
       Assert.True(sugl.LastOrDefault().Password == "Pass321");
 
     }
+    [Fact]
+    public void Test_GetCustomerByUserName()
+    {
+      var actual = Sut.GetCustomerByUserName(sutC.UserName);
+
+      Assert.True(actual.UserName == sutC.UserName);
+    }
 
   }
 }
