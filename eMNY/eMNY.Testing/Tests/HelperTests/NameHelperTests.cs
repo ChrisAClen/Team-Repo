@@ -31,7 +31,7 @@ namespace eMNY.Testing.Tests.HelperTests
     [Fact]
     public void Test_SetName()
     {
-      Assert.True(Sut.SetName(sua));
+      Assert.NotNull(sua);
     }
 
     [Fact]
@@ -40,8 +40,8 @@ namespace eMNY.Testing.Tests.HelperTests
       var sugl = Sut.GetNames();
 
       Assert.NotNull(sugl);
-      Assert.True(sugl.FirstOrDefault().First == "Jane");
-      Assert.True(sugl.Last().Last == "Doe");
+      Assert.True(sugl.FirstOrDefault().First == "Frank");
+      Assert.True(sugl.FirstOrDefault().Last == "Sinatra");
     }
   }
 }

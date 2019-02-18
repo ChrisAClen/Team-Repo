@@ -127,7 +127,6 @@ namespace eMNY.Code.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    AccountId = table.Column<int>(nullable: false),
                     TransactionAmount = table.Column<decimal>(nullable: false),
                     TransactionDate = table.Column<DateTime>(nullable: false),
                     IsDeposit = table.Column<bool>(nullable: false),
@@ -150,7 +149,6 @@ namespace eMNY.Code.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    CustomerId = table.Column<int>(nullable: false),
                     ExpenseName = table.Column<string>(nullable: true),
                     Amount = table.Column<decimal>(nullable: false),
                     Category = table.Column<string>(nullable: true),

@@ -10,7 +10,7 @@ using eMNY.Code;
 namespace eMNY.Code.Migrations
 {
     [DbContext(typeof(eMNYDbContext))]
-    [Migration("20190216215405_first_migration")]
+    [Migration("20190218024855_first_migration")]
     partial class first_migration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -129,8 +129,6 @@ namespace eMNY.Code.Migrations
 
                     b.Property<string>("Category");
 
-                    b.Property<int>("CustomerId");
-
                     b.Property<DateTime>("ExpenseDate");
 
                     b.Property<string>("ExpenseName");
@@ -162,8 +160,6 @@ namespace eMNY.Code.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("AccountId");
 
                     b.Property<int?>("CustomerId");
 

@@ -127,8 +127,6 @@ namespace eMNY.Code.Migrations
 
                     b.Property<string>("Category");
 
-                    b.Property<int>("CustomerId");
-
                     b.Property<DateTime>("ExpenseDate");
 
                     b.Property<string>("ExpenseName");
@@ -160,8 +158,6 @@ namespace eMNY.Code.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("AccountId");
 
                     b.Property<int?>("CustomerId");
 

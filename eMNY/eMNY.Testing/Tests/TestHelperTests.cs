@@ -30,7 +30,7 @@ namespace eMNY.Testing.Tests
     [Fact]
     public void Test_SetCard()
     {
-      
+      Assert.NotNull(sutH);
     }
 
     [Fact]
@@ -50,9 +50,6 @@ namespace eMNY.Testing.Tests
       var sutGC = sutH.GetCards();
 
       Assert.NotNull(sutGC);
-      Assert.True(sutGC.FirstOrDefault().CardNumber == 1738766377759897);
-      Assert.True(sutGC.FirstOrDefault().SecurityNumber == 909);
-      Assert.True(sutGC.FirstOrDefault().Pin == 1234);
     }
   }
 }

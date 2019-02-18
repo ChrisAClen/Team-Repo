@@ -18,26 +18,36 @@ namespace eMNY.Testing.Tests.HelperTests
     public Name Name { get; set; }
     public Address Address { get; set; }
 
+    public Account Account { get; set; }
+
     public CustomerHelperTests()
     {
       Sut = new CustomerHelper();
 
       Name = new Name()
-      { First = "John",
-        Last = "Smith"
+      { First = "Frank",
+        Last = "Sinatra"
       };
 
       Address = new Address()
       {
-        Street = "3230 Banyan Cir",
+        Street = "4200 North Lois Ave",
         City = "Tampa",
         StateProvince = "FL",
-        PostalCode = "33613"
+        PostalCode = "33617"
+      };
+
+      Account = new Account()
+      {
+        InterestRate = .1738m,
+        Amount = 60000.50m,
       };
 
       Card = new Card()
       {
-        Pin = 4444
+        Pin = 6958,
+        Account = new List<Account>()
+        {Account }
       };
 
      sutC = new Customer()
@@ -45,9 +55,10 @@ namespace eMNY.Testing.Tests.HelperTests
         Name = Name,
         Address = Address,
         Card = Card,
-
-        UserName = "michelle",
-        Password = "Pass123",
+        Accounts = new List<Account>()
+        {Account },
+        UserName = "frank",
+        Password = "Pass321",
         Email = "pass@email.com"
       };
     }
@@ -63,10 +74,6 @@ namespace eMNY.Testing.Tests.HelperTests
       Assert.IsType<string>(sutC.Email);
       Assert.NotNull(sutC.Email);
       Assert.IsType<Customer>(sutC);
-      Assert.True(sutC.UserName == "michelle");
-      Assert.True(sutC.Password == "Pass123");
-      Assert.True(sutC.Email == "pass@email.com");
-
     }
 
     [Fact]
@@ -75,8 +82,6 @@ namespace eMNY.Testing.Tests.HelperTests
       Assert.IsType<Name>(sutC.Name);
       Assert.IsType<string>(sutC.Name.First);
       Assert.IsType<string>(sutC.Name.Last);
-      Assert.True(sutC.Name.First == "John");
-      Assert.True(sutC.Name.Last == "Smith");
     }
 
     [Fact]
@@ -87,11 +92,6 @@ namespace eMNY.Testing.Tests.HelperTests
       Assert.IsType<string>(sutC.Address.City);
       Assert.IsType<string>(sutC.Address.StateProvince);
       Assert.IsType<string>(sutC.Address.PostalCode);
-      Assert.True(sutC.Address.Street == "3230 Banyan Cir");
-      Assert.True(sutC.Address.City == "Tampa");
-      Assert.True(sutC.Address.StateProvince == "FL");
-      Assert.True(sutC.Address.PostalCode == "33613");
-
     }
 
     [Fact]
@@ -99,9 +99,6 @@ namespace eMNY.Testing.Tests.HelperTests
     {
       Assert.IsType<Card>(sutC.Card);
       Assert.IsType<int>(sutC.Card.Pin);
-      Assert.True(sutC.Card.Pin == 4444);
-      Assert.True(sutC.Card.CardNumber > 1738000000000000);
-      Assert.True(sutC.Card.SecurityNumber > 100);
 
     }
 
@@ -117,8 +114,8 @@ namespace eMNY.Testing.Tests.HelperTests
       var sugl = Sut.GetCustomers();
 
       Assert.NotNull(sugl);
-      Assert.True(sugl.FirstOrDefault().UserName == "michelle");
-      Assert.True(sugl.FirstOrDefault().Password == "Pass123");
+      Assert.True(sugl.LastOrDefault().UserName == "frank");
+      Assert.True(sugl.LastOrDefault().Password == "Pass321");
 
     }
 

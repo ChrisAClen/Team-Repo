@@ -24,5 +24,14 @@ namespace eMNY.Code.Helpers
                    select s).ToList();
       return _db.Transactions.ToList(); //lazy loading
     }
+
+
+    public List<Transactions> GetTransactionsByCustomer()
+    {
+      var trans = _db.Transactions.FromSql("select * from transactions");
+      var query = (from s in trans
+                   select s).ToList();
+      return query;  //lazy loading
+    }
   }
 }

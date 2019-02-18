@@ -23,20 +23,25 @@ namespace eMNY.Testing.Tests.HelperTests
         ExpenseName = "Rent",
         Amount = 1000m,
         ExpenseDate = DateTime.Now,
-        Category = "Other"
+        Category = "Other",
+        AccountId = 1
       };
     }
 
     [Fact]
     public void Test_SetExpense()
     {
+      var sutE = eh.SetExpense(sue);
 
     }
 
     [Fact]
     public void Test_GetExpense()
     {
+      var sutE = eh.GetExpenses();
 
+      Assert.True(sutE.FirstOrDefault().ExpenseName == "Rent");
+      Assert.True(sutE.FirstOrDefault().Amount == 1000m);
     }
   }
 }

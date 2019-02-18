@@ -21,20 +21,23 @@ namespace eMNY.Testing.Tests.HelperTests
       sut = new Transactions()
       {
         TransactionAmount = 35.00m,
-        TransactionDate = DateTime.Now
+        TransactionDate = DateTime.Now,
+        CustomerId = 1,
       };
     }
 
     [Fact]
     public void Test_SetTransaction()
     {
-
+      var sutT = the.SetTransaction(sut);
     }
 
     [Fact]
     public void Test_GetTransaction()
     {
+      var sutT = the.GetTransactions();
 
+      Assert.True(sutT.LastOrDefault().TransactionAmount == 35.00m);
     }
 
   }

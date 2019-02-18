@@ -21,8 +21,6 @@ namespace eMNY.Testing.Tests.HelperTests
     {
       ah = new AccountHelper();
 
-
-
       sua = new Account()
       {
         AccountNumber = 2119876543,
@@ -44,13 +42,15 @@ namespace eMNY.Testing.Tests.HelperTests
     [Fact]
     public void Test_SetAccount()
     {
- 
+      Assert.NotNull(sua);
     }
 
     [Fact]
     public void Test_GetAccounts()
     {
-     
+      var sutA = ah.GetAccounts();
+
+      Assert.NotNull(sutA);
     }
 
   }
