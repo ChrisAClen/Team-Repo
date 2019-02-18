@@ -12,6 +12,7 @@ namespace eMNY.Code.Helpers
 
     public bool SetCustomer(Customer customer)
     {
+      //var customer = _db.Customers.FirstOrDefault(a => a.CustomerId == account.CustomerId);
       _db.Customers.Add(customer);
       return _db.SaveChanges() > 0;
     }

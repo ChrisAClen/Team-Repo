@@ -25,7 +25,29 @@ namespace eMNY.Code.Helpers
       return _db.Accounts.ToList(); //lazy loading
     }
 
+    public bool SetAccountbyCard(Account account)
+    {
+      var customer = _db.Customers.FirstOrDefault(a => a.Id == account.Id);
+      var card = _db.Cards.FirstOrDefault(a => a.Id == account.Id);
+      var dataaccount = new Account()
+      {
+        AccountNumber = account.AccountNumber,
+        CreationDate = account.CreationDate,
+        InterestRate = account.InterestRate,
+        Amount = account.Amount
 
+      };
+
+      if (customer == null || card == null)
+      {
+        return false;
+      }
+
+      _db.Accounts.Add(dataaccount);
+
+      return _db.SaveChanges() == 1;
+    }
+  }
     
   }
-}
+

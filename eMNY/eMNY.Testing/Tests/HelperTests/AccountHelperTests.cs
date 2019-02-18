@@ -30,7 +30,6 @@ namespace eMNY.Testing.Tests.HelperTests
         InterestRate = 17.38m,
         Amount = 60000.50m,
       };
-
     }
 
     [Fact]
