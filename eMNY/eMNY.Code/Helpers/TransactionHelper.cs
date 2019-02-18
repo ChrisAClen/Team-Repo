@@ -33,5 +33,26 @@ namespace eMNY.Code.Helpers
                    select s).ToList();
       return query;  //lazy loading
     }
+
+    public bool SetTransactionbyCustomer(Transactions tran)
+    {
+      var customer = _db.Customers.FirstOrDefault(a => a.Id == tran.Id);
+      var datatran = new Transactions()
+      {
+        TransactionAmount = tran.TransactionAmount,
+        TransactionDate = tran.TransactionDate
+
+      };
+
+      if (customer == null)
+      {
+        return false;
+      }
+
+      _db.Transactions.Add(datatran);
+
+      return _db.SaveChanges() == 1;
+    }
+
   }
 }

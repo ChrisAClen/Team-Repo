@@ -43,5 +43,11 @@ namespace eMNY.Testing.Tests.HelperTests
       Assert.True(sutE.FirstOrDefault().ExpenseName == "Rent");
       Assert.True(sutE.FirstOrDefault().Amount == 1000m);
     }
+
+    [Fact]
+    public void Test_SetExpensesbyAccount()
+    {
+      var sut = eh.SetExpensesbyAccount(sue);
+    }
   }
 }
