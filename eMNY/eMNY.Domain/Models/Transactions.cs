@@ -11,6 +11,7 @@ namespace eMNY.Domain.Models
   {
     public decimal TransactionAmount { get; set; }
     public DateTime TransactionDate { get; set; }
+    public int CustomerId { get; set; }
 
     public bool IsDeposit { get; set; }
 

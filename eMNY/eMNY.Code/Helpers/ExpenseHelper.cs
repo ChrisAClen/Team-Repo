@@ -24,6 +24,15 @@ namespace eMNY.Code.Helpers
                    select s).ToList();
       return _db.Expenses.ToList(); //lazy loading
     }
+
+    public List<Expense> GetExpensesByAccount()
+    {
+      var exp = _db.Expenses.FromSql("select * from expenses");
+      var query = (from s in exp
+                   select s).ToList();
+      return query; //lazy loading
+    }
+
   }
 }
 

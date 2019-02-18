@@ -23,7 +23,8 @@ namespace eMNY.Testing.Tests.HelperTests
         ExpenseName = "Rent",
         Amount = 1000m,
         ExpenseDate = DateTime.Now,
-        Category = "Other"
+        Category = "Other",
+        AccountId = 1
       };
     }
 

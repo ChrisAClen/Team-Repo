@@ -12,6 +12,7 @@ namespace eMNY.Domain.Models
     public decimal Amount { get; set; }
     public string Category { get; set; }
     public DateTime ExpenseDate { get; set; }
+    public int AccountId { get; set; }
 
     public override bool IsValid()
     {
