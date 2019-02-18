@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-//using eMNY.Client.ViewModels;
+using eMNY.Client.ViewModels;
 using eMNY.Code.Helpers;
 using eMNY.Domain.Models;
 using Microsoft.AspNetCore.Http;
@@ -16,7 +16,8 @@ namespace eMNY.Client.Controllers
 
         public IActionResult Validation(Customer cust)
         {
-          var customer = CustomerHelper.GetCustomerByUserName(cust.UserName);
+          var uvm = new UserViewModel();
+          var customer = uvm.GetCustomerByUserName(cust.UserName);
 
           if (customer == null)
           {
