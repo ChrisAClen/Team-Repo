@@ -29,7 +29,6 @@ namespace eMNY.Testing.Tests.HelperTests
     public void Test_SetTransaction()
     {
       var sutT = the.SetTransaction(sut);
-
     }
 
     [Fact]

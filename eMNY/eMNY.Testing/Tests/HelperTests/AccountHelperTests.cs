@@ -42,7 +42,6 @@ namespace eMNY.Testing.Tests.HelperTests
     [Fact]
     public void Test_SetAccount()
     {
-      var sut = ah.SetAccount(sua);
 
     }
 

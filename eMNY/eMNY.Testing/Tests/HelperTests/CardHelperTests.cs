@@ -30,7 +30,7 @@ namespace eMNY.Testing.Tests.HelperTests
     [Fact]
     public void Test_SetRCard()
     {
-      Assert.True(Sut.SetCard(Suc));
+
     }
 
     [Fact]
