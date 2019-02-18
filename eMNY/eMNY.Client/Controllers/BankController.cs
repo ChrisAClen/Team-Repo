@@ -10,7 +10,6 @@ namespace eMNY.Client.Controllers
     {
         public IActionResult Account()
         {
-
             return View("Account");
         }
 
@@ -26,7 +25,7 @@ namespace eMNY.Client.Controllers
 
         public IActionResult Transactions()
         {
-          return View("Transaction");
+          return View("Transactions");
         }
   }
 }
