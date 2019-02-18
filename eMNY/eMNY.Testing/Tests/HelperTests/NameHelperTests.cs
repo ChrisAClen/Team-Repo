@@ -31,7 +31,7 @@ namespace eMNY.Testing.Tests.HelperTests
     [Fact]
     public void Test_SetName()
     {
-
+      Assert.NotNull(sua);
     }
 
     [Fact]

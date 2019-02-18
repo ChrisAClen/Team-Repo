@@ -42,7 +42,7 @@ namespace eMNY.Testing.Tests.HelperTests
     [Fact]
     public void Test_SetAccount()
     {
-
+      Assert.NotNull(sua);
     }
 
     [Fact]

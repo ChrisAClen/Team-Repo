@@ -32,7 +32,7 @@ namespace eMNY.Testing.Tests.HelperTests
     [Fact]
     public void Test_SetAddress()
     {
-
+      Assert.NotNull(sua);
     }
 
     [Fact]

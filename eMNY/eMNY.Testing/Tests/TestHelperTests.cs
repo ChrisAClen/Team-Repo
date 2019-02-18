@@ -30,7 +30,7 @@ namespace eMNY.Testing.Tests
     [Fact]
     public void Test_SetCard()
     {
-      
+      Assert.NotNull(sutH);
     }
 
     [Fact]
