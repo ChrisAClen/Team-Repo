@@ -6,20 +6,21 @@ namespace eMNY.Client.ViewModels
 {
   public class UserViewModel
   {
+    public CustomerHelper ch;
+
     public List<edm.Customer> GetCustomers()
     {
-      var ch = new CustomerHelper();
       return ch.GetCustomers();
     }
      
-    public static edm.Customer GetCustomerByUserName(string username)
+    public edm.Customer GetCustomerByUserName(string username)
     {
-      return CustomerHelper.GetCustomerByUserName(username);
+      return ch.GetCustomerByUserName(username);
     }
 
     public bool ULogin(string username, string password)
     {
-      return CustomerHelper.GetLogin(username, password);
+      return ch.GetLogin(username, password);
     }
 
     internal bool Register(edm.Name name, string username, string password, string email)
