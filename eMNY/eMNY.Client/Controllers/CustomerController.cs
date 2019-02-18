@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using eMNY.Client.ViewModels;
+﻿using System.Linq;
+//using eMNY.Client.ViewModels;
 using eMNY.Code.Helpers;
 using eMNY.Domain.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace eMNY.Client.Controllers
 {
     public class CustomerController : Controller
     {
-        public IActionResult Login()
+        public IActionResult Account()
         {
           return View();
         }
@@ -19,17 +17,33 @@ namespace eMNY.Client.Controllers
         public IActionResult Validation(Customer cust)
         {
           var customer = CustomerHelper.GetCustomerByUserName(cust.UserName);
+
           if (customer == null)
           {
-            return RedirectToAction("Login", "Login");
+            return RedirectToAction("Login", "Home");
           }
-          
+
           if (customer.Password != cust.Password)
           {
-            return RedirectToAction("Login", "Login");
+            return RedirectToAction("Login", "Home");
           }
+
           return RedirectToAction("Index", "Home");
         }
-        
+
+        public IActionResult Register(Customer cust)
+        {
+/*
+          if (CustomerHelper.SetCustomer(cust))
+          {
+            var customer = CustomerHelper.GetCustomers().Where(u => u.UserName == cust.UserName).FirstOrDefault();
+            
+            HttpContext.Session.SetString("Username", customer.UserName);
+            return RedirectToAction("Index", "Home");
+          }
+*/
+
+          return RedirectToAction("Register", "Home");
+        }
     }
 }

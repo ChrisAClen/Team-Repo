@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using eMNY.Client.Models;
 
@@ -20,7 +16,15 @@ namespace eMNY.Client.Controllers
       return View();
     }
     
+    public IActionResult Login()
+    {
+      return View();
+    }
     
+    public IActionResult Register()
+    {
+      return View();
+    }
     
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
