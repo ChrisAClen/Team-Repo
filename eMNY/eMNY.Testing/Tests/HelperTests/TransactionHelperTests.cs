@@ -37,7 +37,7 @@ namespace eMNY.Testing.Tests.HelperTests
     {
       var sutT = the.GetTransactions();
 
-      Assert.NotNull(sutT);
+      Assert.True(sutT.LastOrDefault().TransactionAmount == 35.00m);
     }
 
   }

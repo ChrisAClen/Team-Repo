@@ -40,7 +40,8 @@ namespace eMNY.Testing.Tests.HelperTests
     {
       var sutE = eh.GetExpenses();
 
-      Assert.NotNull(sutE);
+      Assert.True(sutE.FirstOrDefault().ExpenseName == "Rent");
+      Assert.True(sutE.FirstOrDefault().Amount == 1000m);
     }
   }
 }
