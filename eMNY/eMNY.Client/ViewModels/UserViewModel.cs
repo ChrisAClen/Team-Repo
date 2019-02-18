@@ -12,6 +12,11 @@ namespace eMNY.Client.ViewModels
       return ch.GetCustomers();
     }
 
+    public bool ULogin(string username, string password)
+    {
+      return CustomerHelper.GetLogin(username, password);
+    }
+
     internal bool Register(edm.Name name, string username, string password, string email)
     {
       var ch = new CustomerHelper();
@@ -23,7 +28,7 @@ namespace eMNY.Client.ViewModels
         Password = password,
         Email = email
       };
-
+ 
       return ch.SetCustomer(cust);
     }
   }

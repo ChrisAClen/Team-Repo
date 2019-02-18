@@ -20,11 +20,34 @@ namespace eMNY.Code.Helpers
     {
       var customers = _db.Customers.FromSql("select * from customers");
       var query = (from u in _db.Customers
-                   select u).ToList();
+        select u).ToList();
       return _db.Customers.ToList(); //lazy loading
+    }
+
+    public static Customer GetCustomerByUserName(string username)
+    {
+      return _db.Customers.FirstOrDefault(m => m.UserName == username);
+    }
+
+    public static bool GetLogin(string username, string password)
+    {
+      var logIn = GetCustomerByUserName(username);
+      if (logIn != null)
+      {
+        if (logIn.Password == password)
+        {
+          return true;
+        }
+
+        return false;
+      }
+
+      return false;
     }
   }
 }
+
+
 
 
 
