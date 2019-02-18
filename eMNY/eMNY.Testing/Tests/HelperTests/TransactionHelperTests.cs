@@ -28,13 +28,16 @@ namespace eMNY.Testing.Tests.HelperTests
     [Fact]
     public void Test_SetTransaction()
     {
+      var sutT = the.SetTransaction(sut);
 
     }
 
     [Fact]
     public void Test_GetTransaction()
     {
+      var sutT = the.GetTransactions();
 
+      Assert.NotNull(sutT);
     }
 
   }

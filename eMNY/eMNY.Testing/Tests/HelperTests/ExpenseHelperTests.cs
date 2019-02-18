@@ -30,13 +30,16 @@ namespace eMNY.Testing.Tests.HelperTests
     [Fact]
     public void Test_SetExpense()
     {
+      var sutE = eh.SetExpense(sue);
 
     }
 
     [Fact]
     public void Test_GetExpense()
     {
+      var sutE = eh.GetExpenses();
 
+      Assert.NotNull(sutE);
     }
   }
 }
