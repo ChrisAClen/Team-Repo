@@ -24,9 +24,21 @@ namespace eMNY.Client.Models
     public bool IsDeposit { get; set; }
 
 
+    public decimal Withdraw()
+    {
+      if (Amount <= 0 || Balance > 0)
+        return Amount;
+      Balance -= Amount;
+      return Balance;
+    }
 
-
-
+    public decimal Deposit()
+    {
+      if (Amount <= 0)
+        return Amount;
+      Balance += Amount;
+      return Balance;
+    }
 
   }
 

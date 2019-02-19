@@ -1,3 +1,5 @@
+@using eMNY.Domain.Models
+
 @model eMNY.Client.Models.BankViewModel
 @{
   Layout = "~/Views/Shared/_Layout.cshtml";
@@ -19,7 +21,6 @@
         @Html.ValidationMessageFor(model => model.TransactionAmount, "", new { @class = "text-danger" })
       </div>
     </div>
-
 
 
     <div class="form-group">
