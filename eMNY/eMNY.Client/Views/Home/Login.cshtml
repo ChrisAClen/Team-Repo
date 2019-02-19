@@ -21,10 +21,10 @@
           </div>
           <div class="form-group">
             @Html.LabelFor(u => u.Password, "Enter your Password: ")
-            @Html.TextBoxFor(u => u.Password)
+            @Html.PasswordFor(u => u.Password)
             @Html.ValidationMessageFor(u => u.Password)
           </div>
-          <button type="button" class="btn btn-primary">Login</button>
+          <button type="submit" value="submit" id= "button" class="btn btn-primary">Login</button>
         </div>
       </div>
     </div>

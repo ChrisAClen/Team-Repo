@@ -1,11 +1,20 @@
 ﻿using System.Diagnostics;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using eMNY.Client.Models;
+using eMNY.Code.Helpers;
+using eMNY.Domain.Models;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Rewrite.Internal.UrlActions;
+using Newtonsoft.Json;
 
 namespace eMNY.Client.Controllers
 {
   public class HomeController : Controller
   {
+    CustomerHelper ch = new CustomerHelper();
+
     public IActionResult Index()
     {
       return View();
@@ -21,11 +30,56 @@ namespace eMNY.Client.Controllers
       return View();
     }
     
+    [HttpPost("Login")]
+    public IActionResult Login(Login customer)
+    {
+      if (ModelState.IsValid)
+      {
+        var custInDb = ch.GetCustomers().FirstOrDefault(u => u.UserName == customer.Username);
+        if (custInDb == null || customer.Password != custInDb.Password)
+        {
+          ModelState.AddModelError("Username", "Invalid Username/Password");
+          return View("Login");
+        }
+   
+        else
+        {
+          HttpContext.Session.SetString("Username", JsonConvert.SerializeObject(customer));
+          return RedirectToAction("Index", "Home");
+        }
+      }
+      else
+      {
+        return View("Login");
+      }
+    }
+
+
+
+    /*public IActionResult Validation(Customer cust)
+    {
+      var customer = CustomerViewModel(cust.UserName);
+      if (customer == null)
+      {
+        return RedirectToAction("Login", "Home");
+      }
+      else
+      {
+        if (customer.Password != cust.Password)
+        {
+          return RedirectToAction("Login","Home")
+        }
+      }
+      HttpContext.Session.SetString("Username", JsonConvert.SerializeObject(customer));
+    }
+   */
+
+   
     public IActionResult Register()
     {
       return View();
     }
-    
+
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
