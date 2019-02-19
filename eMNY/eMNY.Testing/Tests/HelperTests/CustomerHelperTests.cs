@@ -105,7 +105,7 @@ namespace eMNY.Testing.Tests.HelperTests
     [Fact]
     public void Test_SetCustomer()
     {
-      Assert.True(Sut.SetCustomer(sutC));
+
     }
 
     [Fact]

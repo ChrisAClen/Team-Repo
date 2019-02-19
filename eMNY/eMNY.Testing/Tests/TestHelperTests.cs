@@ -17,9 +17,7 @@ namespace eMNY.Testing.Tests
     {
       sut = new Card()
       {
-        CardNumber = 1738123456789101,
-        Pin = 1234,
-        SecurityNumber = 123        
+     
       };
 
       
@@ -37,10 +35,8 @@ namespace eMNY.Testing.Tests
     public void Test_SetRCard()
     {
       var sutR = sut;
-      sutR.CardNumber = sut.CreateCardNumber();
-      sutR.SecurityNumber = sut.CreateSecurityNumber();
-      Assert.True(sutR.CardNumber != 1738123456789101);
-      Assert.True(sutR.SecurityNumber != 123);
+      Assert.True(sutR.CardNumber >= 1737999999999999);
+      Assert.True(sutR.SecurityNumber >= 99);
      
     }
 

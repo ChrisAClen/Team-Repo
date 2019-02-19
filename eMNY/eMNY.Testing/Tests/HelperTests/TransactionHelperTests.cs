@@ -29,7 +29,7 @@ namespace eMNY.Testing.Tests.HelperTests
     [Fact]
     public void Test_SetTransaction()
     {
-      var sutT = the.SetTransaction(sut);
+      Assert.NotNull(sut);
     }
 
     [Fact]

@@ -16,8 +16,17 @@
     var th = new TransactionHelper();
     foreach (var transaction in th.GetTransactions())
     {
+      string transtype = string.Empty;
+      if (transaction.IsDeposit == true)
+      {
+        transtype = "Deposit";
+      }
+      else
+      { transtype = "Withdrawl"; }
+
+
       transactions.Add(transaction);
-      @Html.LabelFor(m => m.AccountNumber, "ID: " + transaction.Id + "Amount: " + transaction.TransactionAmount + " Date: " + transaction.TransactionDate)
+      @Html.LabelFor(m => m.AccountNumber, " ID: " + transaction.Id + " Amount: " + transaction.TransactionAmount + " Date: " + transaction.TransactionDate + " Transaction " + transtype)
       <br />
     }
 
