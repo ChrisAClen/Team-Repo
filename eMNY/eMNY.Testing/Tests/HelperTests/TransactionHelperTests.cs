@@ -40,5 +40,8 @@ namespace eMNY.Testing.Tests.HelperTests
       Assert.True(sutT.LastOrDefault().TransactionAmount == 35.00m);
     }
 
+
+
+
   }
 }

@@ -54,5 +54,9 @@ namespace eMNY.Code.Helpers
       return _db.SaveChanges() == 1;
     }
 
+    public List<Transactions> GetTransactionByCustomer(int custoId)
+    { 
+      return _db.Transactions.Where(m => m.CustomerId == custoId).ToList();
+    }
   }
 }

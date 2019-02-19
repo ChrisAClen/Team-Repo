@@ -6,12 +6,12 @@ namespace eMNY.Client.Controllers
     {
         public IActionResult Account()
         {
-            return View("Account");
+          return View("Account");
         }
 
-        public IActionResult Budget()
+        public IActionResult Expense()
         {
-          return View("Budget");
+          return View("Expense");
         }
 
         public IActionResult History()
