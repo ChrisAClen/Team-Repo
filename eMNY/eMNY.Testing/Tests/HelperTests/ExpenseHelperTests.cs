@@ -29,7 +29,7 @@ namespace eMNY.Testing.Tests.HelperTests
         AccountId = 2
       };
 
-      exy = ah.GetAccountById(2);
+     // exy = ah.GetAccountById(2);
     }
 
     [Fact]
