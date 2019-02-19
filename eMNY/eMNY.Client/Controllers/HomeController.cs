@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using eMNY.Client.Models;
@@ -24,10 +24,12 @@ namespace eMNY.Client.Controllers
     {
       return View();
     }
-    
+
+    [HttpGet("Login")]
     public IActionResult Login()
     {
-      return View();
+      var model = new CustomerViewModel();
+      return View(model);
     }
     
     [HttpPost("Login")]
