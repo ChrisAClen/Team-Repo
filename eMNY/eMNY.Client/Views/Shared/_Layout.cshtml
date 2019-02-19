@@ -48,6 +48,12 @@
             <li class="nav-item">
               <a class="nav-link" asp-controller="Bank" asp-action="Account">Account</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" asp-controller="Bank" asp-action="History">History</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" asp-controller="Bank" asp-action="Transactions">Transactions</a>
+            </li>
             var cust = JsonConvert.DeserializeObject<Login>(HCA.HttpContext.Session.GetString("Username"));
             <li class="nav-link" style="color:white;">Hello, @cust.Username</li>
             <li class="nav-item">
