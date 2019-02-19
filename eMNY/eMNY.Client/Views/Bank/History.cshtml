@@ -7,11 +7,11 @@
   ViewData["Title"] = "History";
 }
 
-<div class="text-center">
+<div class="text-center justify-content-center">
   <h1 class="display-4">Your Transaction History</h1>
   @using (@Html.BeginForm())
   {
-    <p>Your Order History</p>
+    <p></p>
     List<Transactions> transactions = new List<Transactions>();
     var th = new TransactionHelper();
     foreach (var transaction in th.GetTransactions())
