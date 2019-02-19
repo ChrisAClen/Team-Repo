@@ -41,7 +41,6 @@ namespace eMNY.Client.Controllers
           ModelState.AddModelError("Username", "Invalid Username/Password");
           return View("Login");
         }
-   
         else
         {
           HttpContext.Session.SetString("Username", JsonConvert.SerializeObject(customer));
