@@ -21,9 +21,7 @@ namespace eMNY.Client.Controllers
 
         public IActionResult Transactions()
         {
-          
-        
-          return RedirectToAction("Transaction", "Bank");
+          return View("Transactions");
         }
   }
 }
