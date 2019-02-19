@@ -23,7 +23,6 @@ namespace eMNY.Testing.Tests
     }
 
     [Fact]
-
     public void AccountTest()
     {
       Assert.IsType<int>(sut.AccountNumber);

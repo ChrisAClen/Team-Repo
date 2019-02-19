@@ -38,14 +38,16 @@ namespace eMNY.Code.Helpers
       var account = _db.Accounts.FirstOrDefault(a => a.Id == expo.Id);
       var dataex = new Expense()
       {
+
         ExpenseName = expo.ExpenseName,
         ExpenseDate = expo.ExpenseDate,
         Category = expo.Category,
-        Amount = expo.Amount
+        Amount = expo.Amount,
+        AccountId = 2
 
       };
 
-      if (account == null)
+      if (dataex == null)
       {
         return false;
       }
@@ -55,9 +57,11 @@ namespace eMNY.Code.Helpers
       return _db.SaveChanges() == 1;
     }
 
-    public List<Expense> GetExpenseByAccount(int accoId)
+    public List<Expense> GetExpenseByAccount(Account exy)
     {
-      return _db.Expenses.Where(m => m.AccountId == accoId).ToList();
+      List<Expense> res = _db.Expenses.Where(m => m.AccountId == exy.Id).ToList();
+
+      return res;
     }
 
   }

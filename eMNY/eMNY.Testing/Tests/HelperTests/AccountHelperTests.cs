@@ -53,5 +53,12 @@ namespace eMNY.Testing.Tests.HelperTests
       Assert.NotNull(sutA);
     }
 
+
+    [Fact]
+    public void GetAccountByIdTest()
+    {
+      var sutA = ah.GetAccountById(2);
+      Assert.NotNull(sutA);
+    }
   }
 }

@@ -40,6 +40,14 @@ namespace eMNY.Testing.Tests.HelperTests
       Assert.True(sutT.LastOrDefault().TransactionAmount == 35.00m);
     }
 
+    [Fact]
+    public void Test_SetTransactionbyCustomer()
+    {
+
+      var sutx = the.SetTransactionbyCustomer(sut);
+
+      Assert.True(sutx);
+    }
 
 
 

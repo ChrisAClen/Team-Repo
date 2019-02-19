@@ -13,6 +13,8 @@ namespace eMNY.Testing.Tests.HelperTests
   {
     public Expense sue { get; set; }
     public ExpenseHelper eh { get; set; }
+    public AccountHelper ah { get; set; }
+    public Account exy { get; set; }
 
     public ExpenseHelperTests()
     {
@@ -24,14 +26,18 @@ namespace eMNY.Testing.Tests.HelperTests
         Amount = 1000m,
         ExpenseDate = DateTime.Now,
         Category = "Other",
-        AccountId = 1
+        AccountId = 2
       };
+
+      exy = ah.GetAccountById(2);
     }
 
     [Fact]
     public void Test_SetExpense()
     {
-      var sutE = eh.SetExpense(sue);
+      var sutE = sue;
+
+      Assert.NotNull(sutE);
 
     }
 
@@ -47,10 +53,28 @@ namespace eMNY.Testing.Tests.HelperTests
     [Fact]
     public void Test_SetExpensesbyAccount()
     {
-
       var sut = eh.SetExpensesbyAccount(sue);
 
-     //Assert.True(sut);
+      Assert.True(sut);
     }
+
+    //[Fact]
+    //public void Test_GetExpenseByAccount()
+    //{
+    //  var sutE = eh.GetExpenseByAccount(sue);
+
+    //  Assert.True(sutE.FirstOrDefault().ExpenseName == "Rent");
+    //  Assert.True(sutE.FirstOrDefault().AccountId == 2);
+    //}
+
+    //[Fact]
+    //public void Test_GetExpenseByAccount()
+    //{
+    //  var sut = eh.GetExpenseByAccount(exy);
+
+    //  //Assert.NotNull(sut);
+    //  Assert.NotEmpty(sut);
+    //}
+
   }
 }
