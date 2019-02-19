@@ -1,4 +1,4 @@
-using eMNY.Domain.Abstracts;
+using eMNY.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +18,13 @@ namespace eMNY.Client.Models
     public decimal Amount { get; set; }
     public bool IsChecking { get; set; }
 
-   
+    public decimal TransactionAmount { get; set; }
+    public DateTime TransactionDate { get; set; }
+    public int CustomerId { get; set; }
+    public bool IsDeposit { get; set; }
+
+
+
 
 
 
