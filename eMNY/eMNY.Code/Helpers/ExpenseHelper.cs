@@ -55,6 +55,11 @@ namespace eMNY.Code.Helpers
       return _db.SaveChanges() == 1;
     }
 
+    public List<Expense> GetExpenseByAccount(int accoId)
+    {
+      return _db.Expenses.Where(m => m.AccountId == accoId).ToList();
+    }
+
   }
 }
 
