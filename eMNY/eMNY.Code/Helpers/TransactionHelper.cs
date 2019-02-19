@@ -25,14 +25,13 @@ namespace eMNY.Code.Helpers
       return _db.Transactions.ToList(); //lazy loading
     }
 
-
-    public List<Transactions> GetTransactionsByCustomer()
-    {
-      var trans = _db.Transactions.FromSql("select * from transactions");
-      var query = (from s in trans
-                   select s).ToList();
-      return query;  //lazy loading
-    }
+    //public List<Transactions> GetTransactionsByCustomer()
+    //{
+    //  var trans = _db.Transactions.FromSql("select * from transactions");
+    //  var query = (from s in trans
+    //               select s).ToList();
+    //  return query;  //lazy loading
+    //}
 
     public bool SetTransactionbyCustomer(Transactions tran)
     {
@@ -40,11 +39,12 @@ namespace eMNY.Code.Helpers
       var datatran = new Transactions()
       {
         TransactionAmount = tran.TransactionAmount,
-        TransactionDate = tran.TransactionDate
+        TransactionDate = tran.TransactionDate,
+        CustomerId = 3
 
       };
 
-      if (customer == null)
+      if (datatran == null)
       {
         return false;
       }
@@ -57,6 +57,13 @@ namespace eMNY.Code.Helpers
     public List<Transactions> GetTransactionByCustomer(int custoId)
     { 
       return _db.Transactions.Where(m => m.CustomerId == custoId).ToList();
+    }
+
+    public List<Transactions> GetTransactionByCustomer(Transactions tran)
+    {
+      List<Transactions> res = _db.Transactions.Where(m => m.CustomerId == tran.Id).ToList();
+
+      return res;
     }
   }
 }

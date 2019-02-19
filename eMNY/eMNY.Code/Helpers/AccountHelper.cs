@@ -25,6 +25,12 @@ namespace eMNY.Code.Helpers
       return _db.Accounts.ToList(); //lazy loading
     }
 
+    public Account GetAccountById(int id)
+    {
+      var account = _db.Accounts.FirstOrDefault(a => a.Id == id);
+      return account;
+    }
+
     public bool SetAccountbyCard(Account account)
     {
       var customer = _db.Customers.FirstOrDefault(a => a.Id == account.Id);
