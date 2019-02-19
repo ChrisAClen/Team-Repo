@@ -46,7 +46,7 @@ namespace eMNY.Client.Controllers
         else
         {
           HttpContext.Session.SetString("Username", JsonConvert.SerializeObject(customer));
-          return RedirectToAction("Index", "Home");
+          return RedirectToAction("Account", "Bank");
         }
       }
       else
@@ -59,7 +59,12 @@ namespace eMNY.Client.Controllers
     {
       return View();
     }
-
+    
+    public IActionResult Logout()
+    {
+      HttpContext.Session.Clear();
+      return RedirectToAction("Index");
+    }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
