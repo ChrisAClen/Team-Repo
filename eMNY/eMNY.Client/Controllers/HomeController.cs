@@ -53,27 +53,6 @@ namespace eMNY.Client.Controllers
         return View("Login");
       }
     }
-
-
-
-    /*public IActionResult Validation(Customer cust)
-    {
-      var customer = CustomerViewModel(cust.UserName);
-      if (customer == null)
-      {
-        return RedirectToAction("Login", "Home");
-      }
-      else
-      {
-        if (customer.Password != cust.Password)
-        {
-          return RedirectToAction("Login","Home")
-        }
-      }
-      HttpContext.Session.SetString("Username", JsonConvert.SerializeObject(customer));
-    }
-   */
-
    
     public IActionResult Register()
     {
